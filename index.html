@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khategaon - Comprehensive Regional Profile & Report</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --primary-dark: #0f172a;
+            --secondary: #0d9488;
+            --accent: #f59e0b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Header Banner */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.25rem;
+            color: #93c5fd;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            font-weight: 300;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Fact Bar Grid */
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: -30px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .fact-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--secondary);
+            text-align: center;
+        }
+
+        .fact-card .number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .fact-card .label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Section Layout */
+        .section {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 12px;
+        }
+
+        .section-title .icon {
+            background: #eff6ff;
+            color: var(--primary-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Data Tables */
+        .data-table-container {
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        table.data-table th {
+            background-color: #f1f5f9;
+            color: var(--primary-dark);
+            padding: 12px 16px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+        }
+
+        table.data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        table.data-table tr:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Two Column Layout */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        /* Callout Box */
+        .callout {
+            background-color: #f0fdf4;
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        .callout h4 {
+            color: #065f46;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .callout p {
+            color: #166534;
+            font-size: 0.95rem;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: var(--text-main);
+        }
+
+        /* Progress Bar / Visual Metric */
+        .metric-bar-group {
+            margin-bottom: 15px;
+        }
+
+        .metric-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .metric-bar-bg {
+            background: #e2e8f0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .metric-bar-fill {
+            height: 100%;
+            background: var(--primary-light);
+            border-radius: 5px;
+        }
+
+        .metric-bar-fill.secondary {
+            background: var(--secondary);
+        }
+
+        .metric-bar-fill.accent {
+            background: var(--accent);
+        }
+
+        /* Custom List */
+        ul.custom-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        ul.custom-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Footer Credits */
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            background: var(--primary-dark);
+            color: #94a3b8;
+            text-align: center;
+            border-top: 4px solid var(--secondary);
+            border-radius: 16px 16px 0 0;
+        }
+
+        footer .credit-line {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        footer .credit-line span {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 20px;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="container">
+            <h1>Khategaon</h1>
+            <p class="subtitle">Comprehensive Sub-Divisional Profile, Demographics, Agricultural Economy & Cultural Analysis</p>
+            <div class="badge-container">
+                <span class="badge">📍 District: Dewas</span>
+                <span class="badge">🏛️ Tehsil Headquarters</span>
+                <span class="badge">🌾 Major Krishi Upaj Mandi</span>
+                <span class="badge">🗳️ Vidhan Sabha Constituency 173</span>
+                <span class="badge">🌊 Narmada River Basin</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Quick Fact Grid -->
+        <div class="fact-grid">
+            <div class="fact-card">
+                <div class="number">455336</div>
+                <div class="label">Postal PIN Code</div>
+            </div>
+            <div class="fact-card">
+                <div class="number">07274</div>
+                <div class="label">STD Code</div>
+            </div>
+            <div class="fact-card">
+                <div class="number">MP-41</div>
+                <div class="label">Vehicle Reg.</div>
+            </div>
+            <div class="fact-card">
+                <div class="number">1,91,435</div>
+                <div class="label">Tehsil Population</div>
+            </div>
+            <div class="fact-card">
+                <div class="number">1,114 km²</div>
+                <div class="label">Tehsil Area</div>
+            </div>
+            <div class="fact-card">
+                <div class="number">508 m</div>
+                <div class="label">Elevation (ASL)</div>
+            </div>
+        </div>
+
+        <!-- Section 1: Executive Overview & Administrative Infrastructure -->
+        <section class="section">
+            <h2 class="section-title"><span class="icon">🏛️</span> Administrative Profile & Governance</h2>
+            <p style="margin-bottom: 20px;">
+                <strong>Khategaon</strong> is a prominent administrative center, Nagar Palika, and sub-divisional headquarters situated in the eastern sector of Dewas district, Madhya Pradesh. Positioned along the fertile Malwa plateau, the town acts as a key administrative, legal, and economic anchor for over 160 surrounding revenue villages.
+            </p>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 12px;">Governance Hierarchy</h3>
+                    <ul class="custom-list">
+                        <li><strong>Municipal Body:</strong> Nagar Palika Parishad (divided into 15 administrative wards).</li>
+                        <li><strong>Nagar Palika Leadership:</strong> Smt. Sarika Narendra Choudhary (Chairperson).</li>
+                        <li><strong>Legislative Status:</strong> Madhya Pradesh Vidhan Sabha Constituency No. 173.</li>
+                        <li><strong>Current MLA:</strong> Aashish Govind Sharma (Bharatiya Janata Party, elected 2023 with 98,629 votes / 51.35%).</li>
+                        <li><strong>Parliamentary Seat:</strong> Vidisha Lok Sabha Constituency.</li>
+                        <li><strong>Judicial Infrastructure:</strong> Additional District & Sessions Court governed under the High Court of Madhya Pradesh (Jabalpur Bench).</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 12px;">2023 Assembly Election Breakdown</h3>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Candidate</th>
+                                    <th>Party</th>
+                                    <th>Votes</th>
+                                    <th>Share (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Aashish Govind Sharma</strong></td>
+                                    <td>BJP</td>
+                                    <td>98,629</td>
+                                    <td>51.35%</td>
+                                </tr>
+                                <tr>
+                                    <td>Deepak Kailash Joshi</td>
+                                    <td>INC</td>
+                                    <td>86,087</td>
+                                    <td>44.82%</td>
+                                </tr>
+                                <tr>
+                                    <td>Gokul Prasad Hariyale</td>
+                                    <td>ASP(KR)</td>
+                                    <td>1,999</td>
+                                    <td>1.04%</td>
+                                </tr>
+                                <tr>
+                                    <td>NOTA</td>
+                                    <td>None</td>
+                                    <td>1,642</td>
+                                    <td>0.85%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Demographics & Socio-Economic Analysis -->
+        <section class="section">
+            <h2 class="section-title"><span class="icon">📊</span> Demographic & Social Profile</h2>
+            <div class="grid-2">
+                <div>
+                    <p>
+                        The Khategaon Tehsil/Block displays a predominantly rural socio-economic structure, with <strong>86%</strong> of its population residing in rural Panchayats and <strong>14%</strong> residing in urban clusters.
+                    </p>
+                    
+                    <div style="margin-top: 20px;">
+                        <div class="metric-bar-group">
+                            <div class="metric-bar-label">
+                                <span>Scheduled Tribes (ST) Population</span>
+                                <span>24.3% (~46,628)</span>
+                            </div>
+                            <div class="metric-bar-bg">
+                                <div class="metric-bar-fill accent" style="width: 24.3%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-bar-group">
+                            <div class="metric-bar-label">
+                                <span>Scheduled Castes (SC) Population</span>
+                                <span>14.2% (~27,321)</span>
+                            </div>
+                            <div class="metric-bar-bg">
+                                <div class="metric-bar-fill secondary" style="width: 14.2%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-bar-group">
+                            <div class="metric-bar-label">
+                                <span>Urban Literacy Rate</span>
+                                <span>82.0%</span>
+                            </div>
+                            <div class="metric-bar-bg">
+                                <div class="metric-bar-fill" style="width: 82%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-bar-group">
+                            <div class="metric-bar-label">
+                                <span>Overall Block Literacy Rate</span>
+                                <span>57.0%</span>
+                            </div>
+                            <div class="metric-bar-bg">
+                                <div class="metric-bar-fill secondary" style="width: 57%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 12px;">Key Census & Demographic Indicators</h3>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Total Block Population</strong></td>
+                                    <td>191,435</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Urban Center Population (Est.)</strong></td>
+                                    <td>~38,000+ (21,018 in 2011)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sex Ratio</strong></td>
+                                    <td>924 Females per 1000 Males</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Population Density (Average)</strong></td>
+                                    <td>172 persons / km²</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Urban Cluster Density</strong></td>
+                                    <td>>10,800 persons / km²</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Male Literacy (Block)</strong></td>
+                                    <td>65.77%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Female Literacy (Block)</strong></td>
+                                    <td>48.07%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Child Population (0–6 yrs)</strong></td>
+                                    <td>~16% of total block</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Agricultural Economy & Trade -->
+        <section class="section">
+            <h2 class="section-title"><span class="icon">🌾</span> Agricultural Economy & Krishi Upaj Mandi</h2>
+            <p>
+                Khategaon is renowned as one of the primary agrarian engines of central Madhya Pradesh. Blessed with fertile black cotton soil (*regur*) and extensive groundwater table recharge from the nearby Narmada River system, agriculture forms the backbone of the region's livelihood.
+            </p>
+
+            <div class="callout">
+                <h4>Krishi Upaj Mandi Samiti (A-Grade Market)</h4>
+                <p>
+                    Khategaon operates an extensive **A-Grade Krishi Upaj Mandi**, which serves as a regional commodity exchange. During peak harvesting seasons (Rabi and Kharif), thousands of quintals of produce arrive daily from Dewas, Harda, Sehore, and Hoshangabad districts.
+                </p>
+            </div>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="feature-card">
+                    <h3>🌽 Major Kharif Crops</h3>
+                    <p>Soybean (the flagship crop of the Malwa region), Maize/Corn, Cotton, Arhar (Pigeon Pea), Urad, and Moong. Soybean oil extraction plants in surrounding industrial zones rely heavily on Khategaon's yields.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌾 Major Rabi Crops</h3>
+                    <p>High-grade Wheat (including famous Sharbati and Lok-1 varieties), Gram (Chana), Mustard (Sarson), Lentils (Masoor), and Winter Maize.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚜 Agri-Services & Ecosystem</h3>
+                    <p>The town boasts dozens of seed suppliers, fertilizer agencies, tractor sales centers (Mahindra, Swaraj, Sonalika, John Deere), and specialized repair workshops catering to modern mechanized farming.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💳 Microfinance & SHGs</h3>
+                    <p>Driven by the National Rural Livelihood Mission (NRLM) and local entities like <em>Khategaon Pragati Samiti (KPS)</em>, extensive Self-Help Group networks empower rural women in dairy, tailoring, and micro-enterprises.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: History & Nomenclature -->
+        <section class="section">
+            <h2 class="section-title"><span class="icon">📜</span> Historical Heritage & Dynastic Roots</h2>
+            <div class="grid-2">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 10px;">The Legacy of Hariganj</h3>
+                    <p style="margin-bottom: 12px;">
+                        Historically, Khategaon was widely referred to as <strong>Hariganj</strong> (or <em>Harigarh</em>). The area was an integral part of the regional administrative setup during the Maratha expansion in Central India in the 18th century.
+                    </p>
+                    <p>
+                        Following the division of Malwa territories, Khategaon came under the administrative influence of the **Holkar Dynasty of Indore** and the dual princely branches of Dewas (Senior and Junior Pawar dynasties). The land revenue systems established during Maratha rule laid the groundwork for its emergence as a organized agricultural marketplace.
+                    </p>
+                </div>
+                <div class="feature-card" style="background: #fff8f0; border-color: #fde68a;">
+                    <h3 style="color: #b45309;">Cultural & Linguistic Profile</h3>
+                    <ul class="custom-list" style="margin-top: 10px;">
+                        <li><strong>Primary Language:</strong> Hindi (Official administrative medium).</li>
+                        <li><strong>Regional Dialect:</strong> Malvi (a sweet Central Indo-Aryan language spoken across the Malwa plateau).</li>
+                        <li><strong>Major Festivals:</strong> Narmada Jayanti (celebrated with great fervor at nearby river ghats), Shivratri, Ganesh Chaturthi, Diwali, and Bhagoria Haat.</li>
+                        <li><strong>Culinary Heritage:</strong> Traditional Malwa fare including Dal Bafla, Laddu, Poha-Jalebi, Nukti, and Malpua.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Geographical Connectivity -->
+        <section class="section">
+            <h2 class="section-title"><span class="icon">🚗</span> Connectivity & Transport Infrastructure</h2>
+            <p style="margin-bottom: 20px;">
+                Khategaon occupies a strategic position on major highway corridors connecting Western and Central Madhya Pradesh.
+            </p>
+
+            <div class="data-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Route / Mode</th>
+                            <th>Key Destinations & Details</th>
+                            <th>Distance / Travel Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Highway Corridor</strong></td>
+                            <td>State Highway 18 / NH-59A & NH-147E links Indore, Kannod, Khategaon, Harda, and Betul.</td>
+                            <td>Direct national corridor connection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Indore Connection</strong></td>
+                            <td>Via Kannod and Nemawar Road. High-frequency bus services available daily.</td>
+                            <td>~125–135 km (3 hours)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bhopal Connection</strong></td>
+                            <td>Via Nasrullaganj / Bherunda route. Excellent state highway connectivity.</td>
+                            <td>~135–140 km (3 hours)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>District HQ (Dewas)</strong></td>
+                            <td>Via Kannod – Bagli – Dewas highway route.</td>
+                            <td>~100 km (2.5 hours)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nearest Railway Hubs</strong></td>
+                            <td>Harda Railway Station (WCR) is the closest major railhead (~40 km). Dewas (~100 km) & Indore (~125 km).</td>
+                            <td>Harda (~40 km)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nearest Airports</strong></td>
+                            <td>Devi Ahilya Bai Holkar Airport, Indore (IDR) & Raja Bhoj Airport, Bhopal (BHO).</td>
+                            <td>~130 km / ~140 km</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 6: Tourist Spots & Regional Attractions -->
+        <section class="section">
+            <h2 class="section-title"><span class="icon">🏔️</span> Regional Ecotourism & Sacred Landmarks</h2>
+            <div class="grid-2">
+                <div class="feature-card">
+                    <h3 style="color: #047857;">🌊 Nemawar & Siddhanath Temple (~15 km)</h3>
+                    <p style="margin-bottom: 10px;">
+                        Located just 15 km south of Khategaon on the banks of the Narmada River, **Nemawar** is a revered pilgrimage site. 
+                    </p>
+                    <ul class="custom-list">
+                        <li><strong>Siddhanath Temple:</strong> An exquisite 11th-century Bhumija-style temple constructed during the Paramara dynasty, dedicated to Lord Shiva.</li>
+                        <li><strong>Nabhi Sthan:</strong> Geometrically considered the exact central midpoint of the holy Narmada River.</li>
+                        <li><strong>Geographical Landmark:</strong> The Tropic of Cancer passes in close proximity to Nemawar.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3 style="color: #047857;">🐅 Kheoni Wildlife Sanctuary (~35 km)</h3>
+                    <p style="margin-bottom: 10px;">
+                        Nestled in the forest range between Kannod and Khategaon, Kheoni spans over 130 km² of pristine dry deciduous and teak forest.
+                    </p>
+                    <ul class="custom-list">
+                        <li><strong>Fauna:</strong> Leopards, Striped Hyenas, Nilgai, Chinkara, Jackals, Wild Boars.</li>
+                        <li><strong>Bird Watching:</strong> Home to 125+ species including the Indian Pitta, Paradise Flycatcher, and Grey Hornbill.</li>
+                        <li><strong>Eco-Tourism:</strong> Uncrowded nature trails, jungle safaris, and tranquil forest retreats.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <h3 style="color: var(--primary); margin-bottom: 12px;">Dam Sites, Waterfalls & Scenic Outings</h3>
+                <div class="grid-2">
+                    <ul class="custom-list">
+                        <li><strong>Datuni Dam & Reservoir:</strong> Major irrigation project offering scenic sunset vistas and local picnics.</li>
+                        <li><strong>Sukalya Thikariya Dam:</strong> Essential agricultural reservoir and peaceful waterscape.</li>
+                        <li><strong>Jalebi Ghat:</strong> Winding scenic mountain pass along local forested roadways.</li>
+                    </ul>
+                    <ul class="custom-list">
+                        <li><strong>Baba Waterfall & Kothada Waterfall:</strong> Monsoon-fed natural cascades popular with local day-trippers.</li>
+                        <li><strong>Khadi River Picnic Spot:</strong> Riverside leisure spot favored during winter months.</li>
+                        <li><strong>Paras Dam:</strong> Water catchment area nestled amid green countryside.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Future Outlook & Summary -->
+        <section class="section" style="background: #f0f9ff; border-color: #bae6fd;">
+            <h2 class="section-title" style="color: #0369a1;"><span class="icon">🚀</span> Development Challenges & Growth Prospects</h2>
+            <div class="grid-2">
+                <div>
+                    <h3 style="color: #0284c7; margin-bottom: 10px;">Key Opportunities</h3>
+                    <ul class="custom-list">
+                        <li><strong>Agro-Processing Expansion:</strong> Scope for grain milling, soybean oil refining, and cold storage infrastructure near the Krishi Upaj Mandi.</li>
+                        <li><strong>Eco-Religious Tourism Corridor:</strong> Integrating Nemawar riverfront heritage with Kheoni Sanctuary safaris into a unified tourism circuit.</li>
+                        <li><strong>Road Modernization:</strong> Upgrading regional feeder roads linking remote Panchayats directly to the Mandi.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #0284c7; margin-bottom: 10px;">Development Focus Areas</h3>
+                    <ul class="custom-list">
+                        <li><strong>Gender Literacy Gap:</strong> Targeted initiatives to improve female rural literacy (currently at 48%).</li>
+                        <li><strong>Healthcare Infrastructure:</strong> Upgrading civil hospital facilities and emergency medical care along the highway network.</li>
+                        <li><strong>Higher Education:</strong> Establishing specialized agricultural and vocational institutes for rural youth.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with mandatory requested credit -->
+    <footer>
+        <div class="container">
+            <p>Khategaon Regional Profile Report & Database</p>
+            <p style="font-size: 0.85rem; margin-top: 5px; opacity: 0.8;">Data aggregated from Census of India, MP Election Commission, Dewas District Gazette, and Regional Agricultural Authorities.</p>
+            
+            <div class="credit-line">
+                Made by <span>mohak choubey</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
