@@ -3,19 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Weather & Forecast | Khategaon</title>
   <meta name="description" content="Check current weather conditions, forecast, and air quality index for Khategaon, Madhya Pradesh.">
   <meta name="theme-color" content="#155eef">
   <link rel="canonical" href="https://khategaon.github.io/pages/weather.html">
   <link rel="stylesheet" href="../assets/css/style.css">
-
   <style>
     .weather-page {
       padding-top: 45px;
       padding-bottom: 75px;
     }
-
     .weather-hero {
       padding: 35px;
       border-radius: 22px;
@@ -23,20 +20,17 @@
       border: 1px solid #e1eaff;
       margin-bottom: 30px;
     }
-
     .weather-hero h1 {
       font-size: clamp(32px, 5vw, 46px);
       letter-spacing: -1.8px;
       line-height: 1.15;
       margin: 10px 0;
     }
-
     .weather-hero p {
       max-width: 650px;
       color: #63718a;
       margin-bottom: 20px;
     }
-
     .weather-main-badge {
       display: inline-flex;
       align-items: center;
@@ -47,17 +41,14 @@
       border-radius: 12px;
       font-weight: 800;
     }
-
     .weather-main-badge strong {
       font-size: 26px;
     }
-
     .weather-search {
       display: flex;
       gap: 10px;
       margin: 25px 0;
     }
-
     .weather-search input {
       width: 100%;
       min-width: 0;
@@ -67,39 +58,32 @@
       outline: none;
       background: #fff;
     }
-
     .weather-search input:focus {
       border-color: #155eef;
       box-shadow: 0 0 0 3px #155eef18;
     }
-
     .weather-section {
       margin-top: 36px;
       scroll-margin-top: 25px;
     }
-
     .weather-section-heading {
       margin-bottom: 18px;
     }
-
     .weather-section-heading h2 {
       font-size: 24px;
       letter-spacing: -.6px;
       margin: 5px 0;
     }
-
     .weather-section-heading p {
       color: #63718a;
       font-size: 13px;
       margin-bottom: 0;
     }
-
     .weather-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
-
     .weather-card {
       display: flex;
       flex-direction: column;
@@ -110,13 +94,11 @@
       border-radius: 16px;
       transition: border-color .2s, transform .2s, box-shadow .2s;
     }
-
     .weather-card:hover {
       border-color: #c5d7ff;
       transform: translateY(-2px);
       box-shadow: 0 10px 26px #1837690b;
     }
-
     .weather-icon {
       display: grid;
       place-items: center;
@@ -128,12 +110,10 @@
       font-size: 22px;
       margin-bottom: 14px;
     }
-
     .weather-card h3 {
       font-size: 15px;
       margin: 0 0 5px;
     }
-
     .weather-card p {
       color: #63718a;
       font-size: 12px;
@@ -141,7 +121,6 @@
       margin: 0 0 15px;
       flex: 1;
     }
-
     .weather-value {
       display: inline-flex;
       align-items: center;
@@ -151,14 +130,12 @@
       font-weight: 850;
       letter-spacing: -.5px;
     }
-
     .weather-value-label {
       display: block;
       color: #8793a6;
       font-size: 10px;
       margin-top: 4px;
     }
-
     .local-notice {
       margin-top: 20px;
       border: 1px solid #dce7ff;
@@ -166,51 +143,43 @@
       border-radius: 13px;
       padding: 20px;
     }
-
     .local-notice h3 {
       margin: 0 0 7px;
       font-size: 16px;
     }
-
     .local-notice p {
       margin: 0;
       font-size: 13px;
       line-height: 1.8;
       color: #63718a;
     }
-
     .forecast-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 13px;
       margin-top: 18px;
     }
-
     .forecast-item {
       padding: 18px;
       border: 1px solid #e6ebf3;
       border-radius: 13px;
       background: #fff;
     }
-
     .forecast-item h3 {
       font-size: 14px;
       margin: 0 0 6px;
     }
-
     .forecast-item p {
       font-size: 12px;
       color: #63718a;
       margin: 0 0 10px;
     }
-
     .forecast-temp {
       display: inline-block;
       font-size: 18px;
       font-weight: 800;
       color: #155eef;
     }
-
     .verify-label {
       display: inline-block;
       font-size: 10px;
@@ -220,14 +189,12 @@
       padding: 5px 8px;
       border-radius: 6px;
     }
-
     .weather-disclaimer {
       margin-top: 28px;
       color: #63718a;
       font-size: 12px;
       line-height: 1.8;
     }
-
     @media (max-width: 850px) {
       .weather-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -236,38 +203,31 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
-
     @media (max-width: 520px) {
       .weather-page {
         padding-top: 25px;
       }
-
       .weather-hero {
         padding: 23px;
       }
-
       .weather-grid,
       .forecast-grid {
         grid-template-columns: 1fr;
       }
-
       .weather-card {
         padding: 18px;
       }
-
       .weather-value {
         font-size: 23px;
       }
     }
   </style>
 </head>
-
 <body>
   <div id="site-header"></div>
   <div id="site-navbar"></div>
 
   <main class="container weather-page">
-
     <section class="weather-hero">
       <span class="eyebrow">LIVE ATMOSPHERE</span>
       <h1>Khategaon Weather & Climate</h1>
@@ -275,10 +235,9 @@
         Check real-time conditions, weather metrics, and seasonal outlook
         for Khategaon, Dewas District, Madhya Pradesh.
       </p>
-
       <div class="weather-main-badge">
         <span aria-hidden="true">☀️</span>
-        <span>Current Condition <strong>32°C</strong> • Sunny</span>
+        <span>Current Condition <strong>33°C</strong> | Mostly Sunny</span>
       </div>
     </section>
 
@@ -299,20 +258,19 @@
       </div>
 
       <div class="weather-grid" id="metrics-grid">
-
         <article class="weather-card" data-search="temperature heat sunny feel high low max min">
           <div class="weather-icon" aria-hidden="true">🌡️</div>
           <h3>Temperature</h3>
           <p>Real-time thermal status and daily range expectation for the region.</p>
-          <span class="weather-value">32°C / 21°C</span>
-          <span class="weather-value-label">Feels like 34°C</span>
+          <span class="weather-value">33°C / 22°C</span>
+          <span class="weather-value-label">Feels like 36°C</span>
         </article>
 
         <article class="weather-card" data-search="humidity moisture air dew point wet monsoon">
           <div class="weather-icon" aria-hidden="true">💧</div>
           <h3>Humidity</h3>
           <p>Relative humidity in the atmosphere affecting comfort and heat index.</p>
-          <span class="weather-value">48%</span>
+          <span class="weather-value">46%</span>
           <span class="weather-value-label">Moderate humidity level</span>
         </article>
 
@@ -320,34 +278,33 @@
           <div class="weather-icon" aria-hidden="true">💨</div>
           <h3>Wind Speed & Direction</h3>
           <p>Prevailing surface winds across Khategaon and surrounding plains.</p>
-          <span class="weather-value">12 km/h</span>
-          <span class="weather-value-label">Wind Direction: WNW</span>
+          <span class="weather-value">8 km/h</span>
+          <span class="weather-value-label">Wind Direction: ENE</span>
         </article>
 
         <article class="weather-card" data-search="air quality index aqi pollution pm2.5 pm10 clean air">
           <div class="weather-icon" aria-hidden="true">🍃</div>
           <h3>Air Quality (AQI)</h3>
           <p>Air quality index assessment for public health and outdoor activity.</p>
-          <span class="weather-value">68 — Moderate</span>
-          <span class="weather-value-label">Acceptable air quality</span>
+          <span class="weather-value">166 — Unhealthy</span>
+          <span class="weather-value-label">Sensitive groups avoid exertion</span>
         </article>
 
         <article class="weather-card" data-search="precipitation rain rainfall storm chance monsoon shower">
           <div class="weather-icon" aria-hidden="true">🌧️</div>
           <h3>Rain Probability</h3>
           <p>Likelihood of precipitation in the town within the next 24 hours.</p>
-          <span class="weather-value">10%</span>
-          <span class="weather-value-label">Low risk of showers</span>
+          <span class="weather-value">0%</span>
+          <span class="weather-value-label">No showers expected</span>
         </article>
 
         <article class="weather-card" data-search="uv index sun radiation skin protection dangerous">
           <div class="weather-icon" aria-hidden="true">☀️</div>
           <h3>UV Index</h3>
           <p>Solar ultraviolet radiation strength during peak daytime hours.</p>
-          <span class="weather-value">6 / 10</span>
-          <span class="weather-value-label">Moderate sun protection advised</span>
+          <span class="weather-value">7 / 10</span>
+          <span class="weather-value-label">High sun protection advised</span>
         </article>
-
       </div>
     </section>
 
@@ -359,31 +316,26 @@
       </div>
 
       <div class="forecast-grid">
-
         <article class="forecast-item">
           <h3>Today</h3>
-          <p>Mostly sunny with gentle breeze.</p>
-          <span class="forecast-temp">32°C / 21°C</span>
+          <p>Mostly sunny & warm.</p>
+          <span class="forecast-temp">33°C / 22°C</span>
         </article>
-
         <article class="forecast-item">
           <h3>Tomorrow</h3>
-          <p>Clear skies throughout the day.</p>
-          <span class="forecast-temp">33°C / 20°C</span>
+          <p>Sunny and clear skies.</p>
+          <span class="forecast-temp">33°C / 21°C</span>
         </article>
-
         <article class="forecast-item">
           <h3>Thursday</h3>
-          <p>Partly cloudy afternoon hours.</p>
-          <span class="forecast-temp">31°C / 22°C</span>
+          <p>Mostly clear afternoon.</p>
+          <span class="forecast-temp">32°C / 21°C</span>
         </article>
-
         <article class="forecast-item">
           <h3>Friday</h3>
-          <p>Warm with light evening breeze.</p>
-          <span class="forecast-temp">34°C / 21°C</span>
+          <p>Sunny with light breeze.</p>
+          <span class="forecast-temp">31°C / 20°C</span>
         </article>
-
       </div>
     </section>
 
@@ -402,7 +354,6 @@
       </div>
 
       <div class="weather-grid" style="margin-top: 18px;">
-
         <article class="weather-card" data-search="farming irrigation crops field soil water">
           <div class="weather-icon" aria-hidden="true">🌱</div>
           <h3>Irrigation Planning</h3>
@@ -423,20 +374,16 @@
           <p>No severe heatwave warnings active currently for Dewas district.</p>
           <span class="verify-label">District Advisory</span>
         </article>
-
       </div>
     </section>
 
     <div class="weather-disclaimer">
       <strong>Important:</strong> Weather measurements and forecasts provided here are general estimations for Khategaon, MP based on regional meteorological data. For official severe weather alerts and agricultural notices, please refer to the India Meteorological Department (IMD).
     </div>
-
   </main>
 
   <div id="site-footer"></div>
-
   <script src="../assets/js/main.js" defer></script>
-
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const input = document.getElementById("weather-query");
