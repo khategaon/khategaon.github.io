@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Medical Stores & Pharmacies in Khategaon | Khategaon Local Guide</title>
+  <meta name="description" content="Find 24-hour pharmacies, medical stores, home delivery options, and healthcare suppliers in Khategaon, Madhya Pradesh.">
+  <meta name="theme-color" content="#155eef">
+  <link rel="canonical" href="https://khategaon.github.io/pages/pharmacies.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .medical-page {
+      padding-top: 45px;
+      padding-bottom: 75px;
+    }
+
+    .medical-hero {
+      padding: 35px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #eef4ff, #f8faff);
+      border: 1px solid #e1eaff;
+      margin-bottom: 30px;
+    }
+
+    .medical-hero h1 {
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -1.8px;
+      line-height: 1.15;
+      margin: 10px 0;
+    }
+
+    .medical-hero p {
+      max-width: 650px;
+      color: #63718a;
+      margin-bottom: 20px;
+    }
+
+    .medical-main-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #155eef;
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .medical-main-badge strong {
+      font-size: 22px;
+    }
+
+    .medical-search {
+      display: flex;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .medical-search input {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #dfe6f1;
+      border-radius: 11px;
+      padding: 13px 15px;
+      outline: none;
+      background: #fff;
+    }
+
+    .medical-search input:focus {
+      border-color: #155eef;
+      box-shadow: 0 0 0 3px #155eef18;
+    }
+
+    .medical-section {
+      margin-top: 36px;
+      scroll-margin-top: 25px;
+    }
+
+    .medical-section-heading {
+      margin-bottom: 18px;
+    }
+
+    .medical-section-heading h2 {
+      font-size: 24px;
+      letter-spacing: -.6px;
+      margin: 5px 0;
+    }
+
+    .medical-section-heading p {
+      color: #63718a;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .medical-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .medical-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e6ebf3;
+      border-radius: 16px;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+
+    .medical-card:hover {
+      border-color: #c5d7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px #1837690b;
+    }
+
+    .medical-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .medical-card h3 {
+      font-size: 15px;
+      margin: 0 0 5px;
+    }
+
+    .medical-card p {
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0 0 15px;
+      flex: 1;
+    }
+
+    .medical-card ul {
+      margin: 0 0 15px 0;
+      padding-left: 18px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .medical-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .medical-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #155eef;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .medical-meta-label {
+      display: block;
+      color: #8793a6;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+
+    .medical-badge-tag {
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 11px;
+      font-weight: 750;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .local-notice {
+      margin-top: 20px;
+      border: 1px solid #dce7ff;
+      background: #f6f9ff;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .local-notice h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .local-notice p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #63718a;
+    }
+
+    .medical-disclaimer {
+      margin-top: 28px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .medical-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .medical-page {
+        padding-top: 25px;
+      }
+
+      .medical-hero {
+        padding: 23px;
+      }
+
+      .medical-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .medical-card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <div id="site-navbar"></div>
+
+  <main class="container medical-page">
+
+    <section class="medical-hero">
+      <span class="eyebrow">KHATEGAON LOCAL GUIDE</span>
+      <h1>Medical Stores in Khategaon</h1>
+      <p>
+        Khategaon provides several essential medical shops, pharmacies, and healthcare clinics distributed around its main commercial streets to handle local prescriptions, emergency medicines, and veterinary supplies.
+      </p>
+
+      <div class="medical-main-badge">
+        <span aria-hidden="true">💊</span>
+        <span>Healthcare <strong>Pharmacies & Supplies</strong></span>
+      </div>
+    </section>
+
+    <form class="medical-search" id="medical-search" role="search">
+      <input
+        type="search"
+        id="medical-query"
+        placeholder="Search 24 hours, home delivery, veterinary, ayurvedic, paracetamol, drive-through..."
+        aria-label="Search medical stores in Khategaon"
+      >
+    </form>
+
+    <!-- 24-HOUR & EXTENDED HOURS PHARMACIES -->
+    <section class="medical-section" id="extended-hours">
+      <div class="medical-section-heading">
+        <span class="eyebrow">EMERGENCY & LATE-NIGHT</span>
+        <h2>24-Hour & Extended Hours Pharmacies</h2>
+        <p>Pharmacies offering late-night hours, round-the-clock availability, or direct delivery services.</p>
+      </div>
+
+      <div class="medical-grid">
+
+        <article class="medical-card" data-search="new adhya medical store 24 hours late night emergency paracetamol syrup barcha road">
+          <div class="medical-icon" aria-hidden="true">🚑</div>
+          <span class="medical-badge-tag">24-Hour Service</span>
+          <h3>New Adhya Medical Store</h3>
+          <ul>
+            <li>Serves as a critical point of care due to its constant accessibility.</li>
+            <li>Functions as a round-the-clock facility, staying open 24 hours a day to handle late-night prescriptions and urgent healthcare requirements.</li>
+            <li>Stocks general pharmaceutical products, paracetamol tablet brands, and common cough syrups.</li>
+          </ul>
+          <span class="medical-meta">Barcha Road / Karmachari Colony</span>
+          <span class="medical-meta-label">Open 24 Hours</span>
+        </article>
+
+        <article class="medical-card" data-search="royal medical store mahatma gandhi road 6:30 am 11:00 pm extended hours">
+          <div class="medical-icon" aria-hidden="true">💊</div>
+          <span class="medical-badge-tag">6:30 AM – 11:00 PM</span>
+          <h3>Royal Medical Store</h3>
+          <ul>
+            <li>Located conveniently on Mahatma Gandhi Road with highly reliable medicine availability.</li>
+            <li>Operates with expansive service timings, welcoming customers daily from 6:30 AM all the way until 11:00 PM.</li>
+            <li>Note-worthy customer service and proactive community awareness.</li>
+          </ul>
+          <span class="medical-meta">Mahatma Gandhi Road</span>
+          <span class="medical-meta-label">Extended Daily Timings</span>
+        </article>
+
+        <article class="medical-card" data-search="apna medical veersavarkar marg drive-through home delivery 9:00 am 11:00 pm">
+          <div class="medical-icon" aria-hidden="true">🚗</div>
+          <span class="medical-badge-tag">Home Delivery & Drive-Through</span>
+          <h3>Apna Medical</h3>
+          <ul>
+            <li>Situated on Veersavarkar Marg, providing flexible medicine pickup methods.</li>
+            <li>Runs standard operating hours every day of the week from 9:00 AM to 11:00 PM.</li>
+            <li>Highly accessible with direct home delivery options and a drive-through service for immediate medication pickup.</li>
+          </ul>
+          <span class="medical-meta">Veersavarkar Marg</span>
+          <span class="medical-meta-label">Delivery & Drive-Through Available</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SPECIALIZED & RETAIL MEDICAL AGENCIES -->
+    <section class="medical-section" id="specialized-retail">
+      <div class="medical-section-heading">
+        <span class="eyebrow">AGENCIES & SPECIALTY STORES</span>
+        <h2>Specialized & Retail Medical Agencies</h2>
+        <p>Pharmacies specializing in wholesale supplies, veterinary medicine, and holistic treatments.</p>
+      </div>
+
+      <div class="medical-grid">
+
+        <article class="medical-card" data-search="pooja medical store khatediya 24 hour veterinary human medicines wellness government school">
+          <div class="medical-icon" aria-hidden="true">🐾</div>
+          <span class="medical-badge-tag">Human & Veterinary Medicine</span>
+          <h3>Pooja Medical Store Khatediya</h3>
+          <ul>
+            <li>Located near the local government school with a unique blend of healthcare supplies.</li>
+            <li>Maintains a 24-hour service structure to fulfill day or night medicine requests continuously.</li>
+            <li>Keeps a full stock of genuine human medications alongside dedicated veterinary medicine supplies and general wellness items.</li>
+          </ul>
+          <span class="medical-meta">Near Government School</span>
+          <span class="medical-meta-label">Open 24 Hours • Veterinary & Human</span>
+        </article>
+
+        <article class="medical-card" data-search="shree shyam medical agency agarda khategaon road wholesale bulk economical authentic">
+          <div class="medical-icon" aria-hidden="true">📦</div>
+          <span class="medical-badge-tag">Bulk Supply Agency</span>
+          <h3>Shree Shyam Medical Agency</h3>
+          <ul>
+            <li>Positioned along the Agarda-Khategaon Road, ideal for larger medicine orders or hard-to-find supplies.</li>
+            <li>Consistently supplies entirely authentic inventory across all its pharmaceutical lots.</li>
+            <li>Offers a comprehensive range of healthcare products paired with economical rates.</li>
+          </ul>
+          <span class="medical-meta">Agarda-Khategaon Road</span>
+          <span class="medical-meta-label">Wholesale & Comprehensive Stock</span>
+        </article>
+
+        <article class="medical-card" data-search="narendra medical stores mahavira marg household daytime 9:30 am 9:00 pm">
+          <div class="medical-icon" aria-hidden="true">🏬</div>
+          <span class="medical-badge-tag">Daytime Pharmacy</span>
+          <h3>Narendra Medical Stores</h3>
+          <ul>
+            <li>Well-established option on Mahavira Marg functioning as a straightforward daytime supplier.</li>
+            <li>Ideal for standard household medical requirements and daily prescriptions.</li>
+            <li>Maintains a six-day schedule, opening from 9:30 AM to 9:00 PM (Closed on Sundays).</li>
+          </ul>
+          <span class="medical-meta">Mahavira Marg</span>
+          <span class="medical-meta-label">Mon – Sat: 9:30 AM – 9:00 PM</span>
+        </article>
+
+        <article class="medical-card" data-search="hasnain medical store eklera khategaon road ayurvedic homeopathic allopathic holistic 8:00 am 9:00 pm">
+          <div class="medical-icon" aria-hidden="true">🌿</div>
+          <span class="medical-badge-tag">Allopathic, Ayurvedic & Homeopathic</span>
+          <h3>Hasnain Medical Store</h3>
+          <ul>
+            <li>Located along the Eklera-Khategaon Road, catering to individuals seeking holistic treatment paths.</li>
+            <li>Operates standard daily hours from 8:00 AM to 9:00 PM.</li>
+            <li>Stocks allopathic pharmaceuticals alongside diverse homeopathic and traditional Ayurvedic remedies.</li>
+          </ul>
+          <span class="medical-meta">Eklera-Khategaon Road</span>
+          <span class="medical-meta-label">Multi-System Healthcare Remedies</span>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="local-notice">
+      <h3>Medical Emergency Guidelines</h3>
+      <p>
+        In case of extreme medical emergencies requiring urgent transport or hospital admission, call the <strong>National Ambulance Service at 102 / 108</strong> or the integrated <strong>Emergency Helpline at 112</strong> immediately.
+      </p>
+    </div>
+
+    <p style="margin-top:28px"><a href="../index.html" style="color:#155eef;font-weight:700">← Back to homepage</a></p>
+
+    <div class="medical-disclaimer">
+      <strong>Important:</strong> Store timings, stock availability, and night duty schedules may vary during public holidays or emergency periods. Always verify directly with the shop when urgent medications are required.
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("medical-query");
+      const cards = [...document.querySelectorAll(".medical-card")];
+
+      input.addEventListener("input", () => {
+        const query = input.value.trim().toLowerCase();
+
+        cards.forEach(card => {
+          const content = (
+            card.textContent + " " + (card.dataset.search || "")
+          ).toLowerCase();
+
+          card.hidden = !content.includes(query);
+        });
+
+        document.querySelectorAll(".medical-section").forEach(section => {
+          const sectionCards = [
+            ...section.querySelectorAll(".medical-card")
+          ];
+
+          if (sectionCards.length > 0) {
+            section.hidden = sectionCards.every(card => card.hidden);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hotels & Stays in Khategaon | Khategaon Local Guide</title>
+  <meta name="description" content="Find premium resorts, budget hotels, and transit lodges in Khategaon, Madhya Pradesh.">
+  <meta name="theme-color" content="#155eef">
+  <link rel="canonical" href="https://khategaon.github.io/pages/hotels.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .hotel-page {
+      padding-top: 45px;
+      padding-bottom: 75px;
+    }
+
+    .hotel-hero {
+      padding: 35px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #eef4ff, #f8faff);
+      border: 1px solid #e1eaff;
+      margin-bottom: 30px;
+    }
+
+    .hotel-hero h1 {
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -1.8px;
+      line-height: 1.15;
+      margin: 10px 0;
+    }
+
+    .hotel-hero p {
+      max-width: 650px;
+      color: #63718a;
+      margin-bottom: 20px;
+    }
+
+    .hotel-main-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #155eef;
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .hotel-main-badge strong {
+      font-size: 22px;
+    }
+
+    .hotel-search {
+      display: flex;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .hotel-search input {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #dfe6f1;
+      border-radius: 11px;
+      padding: 13px 15px;
+      outline: none;
+      background: #fff;
+    }
+
+    .hotel-search input:focus {
+      border-color: #155eef;
+      box-shadow: 0 0 0 3px #155eef18;
+    }
+
+    .hotel-section {
+      margin-top: 36px;
+      scroll-margin-top: 25px;
+    }
+
+    .hotel-section-heading {
+      margin-bottom: 18px;
+    }
+
+    .hotel-section-heading h2 {
+      font-size: 24px;
+      letter-spacing: -.6px;
+      margin: 5px 0;
+    }
+
+    .hotel-section-heading p {
+      color: #63718a;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .hotel-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e6ebf3;
+      border-radius: 16px;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+
+    .hotel-card:hover {
+      border-color: #c5d7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px #1837690b;
+    }
+
+    .hotel-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .hotel-card h3 {
+      font-size: 15px;
+      margin: 0 0 5px;
+    }
+
+    .hotel-card p {
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0 0 15px;
+      flex: 1;
+    }
+
+    .hotel-card ul {
+      margin: 0 0 15px 0;
+      padding-left: 18px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .hotel-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .hotel-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #155eef;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .hotel-meta-label {
+      display: block;
+      color: #8793a6;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+
+    .hotel-badge-tag {
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 11px;
+      font-weight: 750;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .local-notice {
+      margin-top: 20px;
+      border: 1px solid #dce7ff;
+      background: #f6f9ff;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .local-notice h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .local-notice p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #63718a;
+    }
+
+    .hotel-disclaimer {
+      margin-top: 28px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .hotel-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hotel-page {
+        padding-top: 25px;
+      }
+
+      .hotel-hero {
+        padding: 23px;
+      }
+
+      .hotel-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hotel-card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <div id="site-navbar"></div>
+
+  <main class="container hotel-page">
+
+    <section class="hotel-hero">
+      <span class="eyebrow">KHATEGAON LOCAL GUIDE</span>
+      <h1>Hotels & Stays in Khategaon</h1>
+      <p>
+        Khategaon offers a mix of accommodation options catering to highway travelers, families, and budget-conscious visitors.
+      </p>
+
+      <div class="hotel-main-badge">
+        <span aria-hidden="true">🏨</span>
+        <span>Accommodations <strong>Resorts & Lodges</strong></span>
+      </div>
+    </section>
+
+    <form class="hotel-search" id="hotel-search" role="search">
+      <input
+        type="search"
+        id="hotel-query"
+        placeholder="Search pool, resort, rooftop, budget, highway, room service..."
+        aria-label="Search hotels and stays in Khategaon"
+      >
+    </form>
+
+    <!-- PREMIUM & FULL-SERVICE STAYS -->
+    <section class="hotel-section" id="premium-stays">
+      <div class="hotel-section-heading">
+        <span class="eyebrow">PREMIUM & RESORT STAYS</span>
+        <h2>Premium & Full-Service Stays</h2>
+        <p>Resorts and higher-rated properties featuring dining, pool, and modern room amenities.</p>
+      </div>
+
+      <div class="hotel-grid">
+
+        <article class="hotel-card" data-search="hotel hr dreams resort nh 47 pool swimming spa hot tub breakfast modern rooms ₹3708 ₹3972">
+          <div class="hotel-icon" aria-hidden="true">🏊</div>
+          <span class="hotel-badge-tag">Resort & Spa</span>
+          <h3>Hotel HR Dreams & Resort</h3>
+          <ul>
+            <li>Situated conveniently along National Highway 47 featuring resort-style amenities including an outdoor swimming pool, spa, and hot tub.</li>
+            <li>Guests frequently praise the modern interiors and comfortable bedding inside the well-designed rooms.</li>
+            <li>Travelers highlight excellent highway connectivity and appreciate the quality on-site breakfast.</li>
+          </ul>
+          <span class="hotel-meta">Approx. ₹3,700 – ₹3,970</span>
+          <span class="hotel-meta-label">NH-47, Sandalpur / Industrial Area</span>
+        </article>
+
+        <article class="hotel-card" data-search="hotel shri vrinda rajat kunj colony nemawar road rooftop restaurant indore harda polite staff ₹2263 ₹2428">
+          <div class="hotel-icon" aria-hidden="true">🏨</div>
+          <span class="hotel-badge-tag">Rooftop Restaurant & Stay</span>
+          <h3>Hotel Shri Vrinda</h3>
+          <ul>
+            <li>Tucked away in Rajat Kunj Colony off Nemawar Road, praised for its peaceful environment away from heavy crowds.</li>
+            <li>Standout feature according to visitors is the beautiful rooftop restaurant serving travelers between Indore and Harda.</li>
+            <li>Offers spacious, luxurious rooms with exceptionally polite and helpful hospitality staff.</li>
+          </ul>
+          <span class="hotel-meta">Approx. ₹2,260 – ₹2,430</span>
+          <span class="hotel-meta-label">Rajat Kunj Colony, Off Nemawar Road</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- STANDARD & BUDGET ACCOMMODATIONS -->
+    <section class="hotel-section" id="budget-stays">
+      <div class="hotel-section-heading">
+        <span class="eyebrow">BUDGET & TRANSIT LODGES</span>
+        <h2>Standard & Budget Accommodations</h2>
+        <p>Economical lodgings suited for overnight road stops, family visits, and quick stays.</p>
+      </div>
+
+      <div class="hotel-grid">
+
+        <article class="hotel-card" data-search="hotel dhruvnanda palace nemawar road budget family safe value social gatherings ₹969 ₹987">
+          <div class="hotel-icon" aria-hidden="true">🏢</div>
+          <span class="hotel-badge-tag">Budget Friendly</span>
+          <h3>Hotel Dhruvnanda Palace</h3>
+          <ul>
+            <li>Located along Nemawar Road, striking a great balance between pricing and utility.</li>
+            <li>Routinely recommended as a highly budget-friendly choice delivering solid value for money.</li>
+            <li>Families note that it feels secure and safe, making it reliable for overnight stays or hosting small gatherings.</li>
+          </ul>
+          <span class="hotel-meta">Approx. ₹970 – ₹990</span>
+          <span class="hotel-meta-label">Nemawar Road, Khategaon</span>
+        </article>
+
+        <article class="hotel-card" data-search="palash hotel fast night stay room service polite owners budget ₹724 ₹755">
+          <div class="hotel-icon" aria-hidden="true">🛏️</div>
+          <span class="hotel-badge-tag">Economy Transit Stay</span>
+          <h3>Palash Hotel</h3>
+          <ul>
+            <li>A simple, no-frills option right in town catering well to travelers searching for a fast, straightforward night stay.</li>
+            <li>Visitors appreciate the polite behavior of property owners and find room service to be quite fast.</li>
+            <li>Suitable for quick, economical stopovers.</li>
+          </ul>
+          <span class="hotel-meta">Approx. ₹720 – ₹760</span>
+          <span class="hotel-meta-label">Central Town Location</span>
+        </article>
+
+        <article class="hotel-card" data-search="hotel osho palace government college highway lodge transit point">
+          <div class="hotel-icon" aria-hidden="true">🏬</div>
+          <span class="hotel-badge-tag">Basic Highway Lodge</span>
+          <h3>Hotel Osho Palace</h3>
+          <ul>
+            <li>Positioned right opposite the Government College along the highway, serving as a basic transit lodge.</li>
+            <li>Provides essential shelter for short roadside rests during continuous long-distance highway travel.</li>
+          </ul>
+          <span class="hotel-meta">Highway Transit</span>
+          <span class="hotel-meta-label">Opposite Government College</span>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="local-notice">
+      <h3>Booking & Reservation Tips</h3>
+      <p>
+        During peak festive periods (such as Navratri at Vijasan Dham or regional wedding seasons), advance online or phone bookings are recommended for stays along Nemawar Road and NH-47.
+      </p>
+    </div>
+
+    <p style="margin-top:28px"><a href="../index.html" style="color:#155eef;font-weight:700">← Back to homepage</a></p>
+
+    <div class="hotel-disclaimer">
+      <strong>Important:</strong> Pricing, check-in policies, and room availability fluctuate based on season and aggregator deals. Please verify pricing directly with the hotel or booking platform prior to travel.
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("hotel-query");
+      const cards = [...document.querySelectorAll(".hotel-card")];
+
+      input.addEventListener("input", () => {
+        const query = input.value.trim().toLowerCase();
+
+        cards.forEach(card => {
+          const content = (
+            card.textContent + " " + (card.dataset.search || "")
+          ).toLowerCase();
+
+          card.hidden = !content.includes(query);
+        });
+
+        document.querySelectorAll(".hotel-section").forEach(section => {
+          const sectionCards = [
+            ...section.querySelectorAll(".hotel-card")
+          ];
+
+          if (sectionCards.length > 0) {
+            section.hidden = sectionCards.every(card => card.hidden);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

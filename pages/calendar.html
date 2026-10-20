@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calendar & Events | Khategaon</title>
+  <meta name="description" content="Explore the calendar, Indian festivals, holidays and local events in Khategaon, Madhya Pradesh.">
+  <meta name="theme-color" content="#155eef">
+
+  <link rel="canonical" href="https://khategaon.github.io/pages/calendar.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .calendar-page {
+      padding: 48px 0 75px;
+    }
+
+    .calendar-heading {
+      margin-bottom: 28px;
+    }
+
+    .calendar-heading h1 {
+      margin: 8px 0;
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -1.8px;
+    }
+
+    .calendar-heading p {
+      color: #63718a;
+      max-width: 650px;
+    }
+
+    .calendar-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(250px, 0.8fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .calendar-panel,
+    .side-panel {
+      border: 1px solid #e6ebf3;
+      border-radius: 18px;
+      background: #fff;
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(24, 55, 105, 0.04);
+    }
+
+    .calendar-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .calendar-controls h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .calendar-actions {
+      display: flex;
+      gap: 7px;
+    }
+
+    .calendar-btn {
+      border: 1px solid #dce5f4;
+      background: #fff;
+      color: #155eef;
+      padding: 8px 12px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .calendar-btn:hover {
+      background: #eef4ff;
+    }
+
+    .calendar-btn:focus-visible,
+    .calendar-day:focus-visible,
+    .event-item:focus-visible {
+      outline: 3px solid #94b8ff;
+      outline-offset: 2px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    .weekday {
+      text-align: center;
+      color: #7b879b;
+      font-size: 12px;
+      font-weight: 750;
+      padding: 8px 0;
+    }
+
+    .calendar-day {
+      min-height: 67px;
+      border: 1px solid #edf0f6;
+      border-radius: 10px;
+      background: #fff;
+      color: #24324a;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 14px;
+    }
+
+    .calendar-day:hover {
+      border-color: #9bbaff;
+      background: #f6f9ff;
+    }
+
+    .calendar-day.outside-month {
+      color: #aeb7c5;
+      background: #fafbfd;
+    }
+
+    .calendar-day.today {
+      border: 2px solid #155eef;
+      color: #155eef;
+      font-weight: 800;
+    }
+
+    .calendar-day.selected {
+      background: #155eef;
+      color: #fff;
+      border-color: #155eef;
+    }
+
+    .day-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #155eef;
+    }
+
+    .calendar-day.selected .day-dot {
+      background: #fff;
+    }
+
+    .calendar-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+      color: #63718a;
+      font-size: 12px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #155eef;
+    }
+
+    .legend-dot.today-dot {
+      background: #fff;
+      border: 2px solid #155eef;
+    }
+
+    .side-panel + .side-panel {
+      margin-top: 20px;
+    }
+
+    .side-panel h2 {
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .side-description {
+      color: #63718a;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .selected-date {
+      background: #eef4ff;
+      border-radius: 12px;
+      padding: 14px;
+      margin: 15px 0;
+    }
+
+    .selected-date strong {
+      display: block;
+      color: #155eef;
+      font-size: 16px;
+    }
+
+    .selected-date span {
+      color: #63718a;
+      font-size: 12px;
+    }
+
+    .event-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .event-item {
+      padding: 13px;
+      border: 1px solid #e6ebf3;
+      border-radius: 11px;
+    }
+
+    .event-item strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .event-item span {
+      display: block;
+      color: #63718a;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .event-tag {
+      display: inline-block !important;
+      width: fit-content;
+      margin-top: 8px !important;
+      background: #eef4ff;
+      color: #155eef !important;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+
+    .no-events {
+      color: #63718a;
+      background: #f8faff;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 13px;
+    }
+
+    .calendar-note {
+      margin-top: 25px;
+      border: 1px solid #dce7ff;
+      background: #f6f9ff;
+      border-radius: 13px;
+      padding: 17px;
+      color: #536580;
+      font-size: 13px;
+    }
+
+    .calendar-note strong {
+      color: #155eef;
+    }
+
+    @media (max-width: 800px) {
+      .calendar-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .calendar-page {
+        padding-top: 30px;
+      }
+
+      .calendar-panel,
+      .side-panel {
+        padding: 15px;
+      }
+
+      .calendar-controls {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .calendar-controls h2 {
+        font-size: 20px;
+      }
+
+      .calendar-grid {
+        gap: 3px;
+      }
+
+      .calendar-day {
+        min-height: 49px;
+        border-radius: 7px;
+        font-size: 12px;
+      }
+
+      .weekday {
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <div id="site-navbar"></div>
+
+  <main class="container calendar-page">
+    <header class="calendar-heading">
+      <span class="eyebrow">DATES · FESTIVALS · COMMUNITY</span>
+      <h1>Khategaon Calendar</h1>
+      <p>
+        Keep track of dates and explore festivals, public holidays and
+        community events for Khategaon, Madhya Pradesh.
+      </p>
+    </header>
+
+    <div class="calendar-layout">
+      <section class="calendar-panel" aria-label="Monthly calendar">
+        <div class="calendar-controls">
+          <h2 id="month-year" aria-live="polite">Loading calendar...</h2>
+
+          <div class="calendar-actions">
+            <button class="calendar-btn" id="previous-month"
+                    type="button" aria-label="Previous month">←</button>
+            <button class="calendar-btn" id="today-button"
+                    type="button">Today</button>
+            <button class="calendar-btn" id="next-month"
+                    type="button" aria-label="Next month">→</button>
+          </div>
+        </div>
+
+        <div class="calendar-grid" id="calendar-grid"
+             role="grid" aria-label="Calendar dates">
+        </div>
+
+        <div class="calendar-legend">
+          <span class="legend-item">
+            <span class="legend-dot today-dot"></span> Today
+          </span>
+          <span class="legend-item">
+            <span class="legend-dot"></span> Listed event
+          </span>
+        </div>
+      </section>
+
+      <aside>
+        <section class="side-panel">
+          <h2>Selected date</h2>
+          <p class="side-description">
+            Select any date on the calendar to view its events.
+          </p>
+
+          <div class="selected-date">
+            <strong id="selected-date-title">Select a date</strong>
+            <span id="selected-date-subtitle">Khategaon, Madhya Pradesh</span>
+          </div>
+
+          <div id="selected-events" class="event-list" aria-live="polite">
+            <p class="no-events">Select a date to explore listed events.</p>
+          </div>
+        </section>
+
+        <section class="side-panel">
+          <h2>Upcoming events</h2>
+          <p class="side-description">
+            Events added to this website's calendar.
+          </p>
+
+          <div id="upcoming-events" class="event-list">
+            <p class="no-events">No local events have been added yet.</p>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <div class="calendar-note">
+      <strong>About this calendar:</strong>
+      The calendar dates are generated automatically. Festival dates,
+      government holidays and local events should be verified against
+      official sources before being published. This page does not yet
+      include a live holiday feed.
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/main.js" defer></script>
+  <script>
+    (() => {
+      "use strict";
+
+      const monthYear = document.getElementById("month-year");
+      const calendarGrid = document.getElementById("calendar-grid");
+      const selectedTitle = document.getElementById("selected-date-title");
+      const selectedSubtitle = document.getElementById("selected-date-subtitle");
+      const selectedEvents = document.getElementById("selected-events");
+      const upcomingEvents = document.getElementById("upcoming-events");
+
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      let displayedMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+      let selectedDate = new Date(today);
+
+      /*
+       * Add verified local events here.
+       * Use YYYY-MM-DD dates.
+       *
+       * Example:
+       * {
+       *   date: "2026-11-01",
+       *   title: "Community Event",
+       *   type: "Local event",
+       *   description: "Add verified event information."
+       * }
+       *
+       * Do not publish unverified festival dates.
+       */
+      const events = [];
+
+      const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+      const dateKey = date => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+      };
+
+      const formatDate = date => date.toLocaleDateString("en-IN", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+
+      function eventsFor(date) {
+        return events.filter(event => event.date === dateKey(date));
+      }
+
+      function createEventCard(event) {
+        const card = document.createElement("div");
+        card.className = "event-item";
+
+        const title = document.createElement("strong");
+        title.textContent = event.title;
+
+        const description = document.createElement("span");
+        description.textContent = event.description || "Event details to be announced.";
+
+        const tag = document.createElement("span");
+        tag.className = "event-tag";
+        tag.textContent = event.type || "Event";
+
+        card.append(title, description, tag);
+        return card;
+      }
+
+      function renderSelectedDate() {
+        selectedTitle.textContent = selectedDate.toLocaleDateString("en-IN", {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        });
+
+        selectedSubtitle.textContent = formatDate(selectedDate);
+        selectedEvents.replaceChildren();
+
+        const matchingEvents = eventsFor(selectedDate);
+
+        if (matchingEvents.length === 0) {
+          const empty = document.createElement("p");
+          empty.className = "no-events";
+          empty.textContent = "No events have been listed for this date.";
+          selectedEvents.appendChild(empty);
+          return;
+        }
+
+        matchingEvents.forEach(event => {
+          selectedEvents.appendChild(createEventCard(event));
+        });
+      }
+
+      function renderUpcomingEvents() {
+        upcomingEvents.replaceChildren();
+
+        const upcoming = events
+          .filter(event => event.date >= dateKey(today))
+          .sort((a, b) => a.date.localeCompare(b.date))
+          .slice(0, 5);
+
+        if (upcoming.length === 0) {
+          const empty = document.createElement("p");
+          empty.className = "no-events";
+          empty.textContent = "No upcoming events have been added yet.";
+          upcomingEvents.appendChild(empty);
+          return;
+        }
+
+        upcoming.forEach(event => {
+          const card = createEventCard(event);
+          const date = document.createElement("span");
+
+          date.textContent = new Date(event.date + "T12:00:00")
+            .toLocaleDateString("en-IN", {
+              day: "numeric",
+              month: "short",
+              year: "numeric"
+            });
+
+          card.insertBefore(date, card.children[1]);
+          upcomingEvents.appendChild(card);
+        });
+      }
+
+      function renderCalendar() {
+        monthYear.textContent = displayedMonth.toLocaleDateString("en-IN", {
+          month: "long",
+          year: "numeric"
+        });
+
+        calendarGrid.replaceChildren();
+
+        weekdays.forEach(day => {
+          const heading = document.createElement("div");
+          heading.className = "weekday";
+          heading.textContent = day;
+          heading.setAttribute("role", "columnheader");
+          calendarGrid.appendChild(heading);
+        });
+
+        const year = displayedMonth.getFullYear();
+        const month = displayedMonth.getMonth();
+        const firstWeekday = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const previousMonthDays = new Date(year, month, 0).getDate();
+
+        // Render six complete weeks so the grid stays aligned.
+        for (let index = 0; index < 42; index++) {
+          let dayNumber;
+          let cellDate;
+          let outsideMonth = false;
+
+          if (index < firstWeekday) {
+            dayNumber = previousMonthDays - firstWeekday + index + 1;
+            cellDate = new Date(year, month - 1, dayNumber);
+            outsideMonth = true;
+          } else if (index >= firstWeekday + daysInMonth) {
+            dayNumber = index - firstWeekday - daysInMonth + 1;
+            cellDate = new Date(year, month + 1, dayNumber);
+            outsideMonth = true;
+          } else {
+            dayNumber = index - firstWeekday + 1;
+            cellDate = new Date(year, month, dayNumber);
+          }
+
+          const key = dateKey(cellDate);
+          const isToday = key === dateKey(today);
+          const isSelected = key === dateKey(selectedDate);
+          const hasEvents = eventsFor(cellDate).length > 0;
+
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "calendar-day";
+          button.setAttribute("role", "gridcell");
+          button.setAttribute("aria-label", formatDate(cellDate));
+
+          if (outsideMonth) button.classList.add("outside-month");
+          if (isToday) button.classList.add("today");
+          if (isSelected) button.classList.add("selected");
+
+          const number = document.createElement("span");
+          number.textContent = dayNumber;
+          button.appendChild(number);
+
+          if (hasEvents) {
+            const dot = document.createElement("span");
+            dot.className = "day-dot";
+            dot.setAttribute("aria-hidden", "true");
+            button.appendChild(dot);
+          }
+
+          if (isToday) {
+            button.setAttribute("aria-current", "date");
+          }
+
+          button.addEventListener("click", () => {
+            selectedDate = new Date(cellDate);
+            displayedMonth = new Date(
+              cellDate.getFullYear(),
+              cellDate.getMonth(),
+              1
+            );
+            renderCalendar();
+            renderSelectedDate();
+          });
+
+          calendarGrid.appendChild(button);
+        }
+      }
+
+      document.getElementById("previous-month").addEventListener("click", () => {
+        displayedMonth = new Date(
+          displayedMonth.getFullYear(),
+          displayedMonth.getMonth() - 1,
+          1
+        );
+        renderCalendar();
+      });
+
+      document.getElementById("next-month").addEventListener("click", () => {
+        displayedMonth = new Date(
+          displayedMonth.getFullYear(),
+          displayedMonth.getMonth() + 1,
+          1
+        );
+        renderCalendar();
+      });
+
+      document.getElementById("today-button").addEventListener("click", () => {
+        selectedDate = new Date(today);
+        displayedMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+        renderCalendar();
+        renderSelectedDate();
+      });
+
+      renderCalendar();
+      renderSelectedDate();
+      renderUpcomingEvents();
+    })();
+  </script>
+</body>
+</html>

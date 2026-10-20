@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Important People & Officials | Khategaon Local Guide</title>
+  <meta name="description" content="Find public representatives, civic officials, and key local contacts for Khategaon, Madhya Pradesh.">
+  <meta name="theme-color" content="#155eef">
+  <link rel="canonical" href="https://khategaon.github.io/pages/people.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .people-page {
+      padding-top: 45px;
+      padding-bottom: 75px;
+    }
+
+    .people-hero {
+      padding: 35px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #eef4ff, #f8faff);
+      border: 1px solid #e1eaff;
+      margin-bottom: 30px;
+    }
+
+    .people-hero h1 {
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -1.8px;
+      line-height: 1.15;
+      margin: 10px 0;
+    }
+
+    .people-hero p {
+      max-width: 650px;
+      color: #63718a;
+      margin-bottom: 20px;
+    }
+
+    .people-main-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #155eef;
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .people-main-badge strong {
+      font-size: 22px;
+    }
+
+    .people-search {
+      display: flex;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .people-search input {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #dfe6f1;
+      border-radius: 11px;
+      padding: 13px 15px;
+      outline: none;
+      background: #fff;
+    }
+
+    .people-search input:focus {
+      border-color: #155eef;
+      box-shadow: 0 0 0 3px #155eef18;
+    }
+
+    .people-section {
+      margin-top: 36px;
+      scroll-margin-top: 25px;
+    }
+
+    .people-section-heading {
+      margin-bottom: 18px;
+    }
+
+    .people-section-heading h2 {
+      font-size: 24px;
+      letter-spacing: -.6px;
+      margin: 5px 0;
+    }
+
+    .people-section-heading p {
+      color: #63718a;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .people-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e6ebf3;
+      border-radius: 16px;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+
+    .people-card:hover {
+      border-color: #c5d7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px #1837690b;
+    }
+
+    .people-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .people-card h3 {
+      font-size: 15px;
+      margin: 0 0 5px;
+    }
+
+    .people-card p {
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0 0 15px;
+      flex: 1;
+    }
+
+    .people-card ul {
+      margin: 0 0 15px 0;
+      padding-left: 18px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .people-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .people-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #155eef;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .people-meta-label {
+      display: block;
+      color: #8793a6;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+
+    .people-badge-tag {
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 11px;
+      font-weight: 750;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .local-notice {
+      margin-top: 20px;
+      border: 1px solid #dce7ff;
+      background: #f6f9ff;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .local-notice h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .local-notice p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #63718a;
+    }
+
+    .verify-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 750;
+      color: #775c18;
+      background: #fff7df;
+      padding: 5px 8px;
+      border-radius: 6px;
+    }
+
+    .people-disclaimer {
+      margin-top: 28px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .people-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .people-page {
+        padding-top: 25px;
+      }
+
+      .people-hero {
+        padding: 23px;
+      }
+
+      .people-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .people-card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <div id="site-navbar"></div>
+
+  <main class="container people-page">
+
+    <section class="people-hero">
+      <span class="eyebrow">KHATEGAON LOCAL GUIDE</span>
+      <h1>Important People & Officials</h1>
+      <p>
+        Public representatives, civic administrators, and key public officials serving Khategaon Vidhan Sabha and Dewas District.
+      </p>
+
+      <div class="people-main-badge">
+        <span aria-hidden="true">🏛️</span>
+        <span>Governance <strong>Public Leaders</strong></span>
+      </div>
+    </section>
+
+    <form class="people-search" id="people-search" role="search">
+      <input
+        type="search"
+        id="people-query"
+        placeholder="Search MLA, MP, SDM, Tehsildar, Nagar Parishad, Janpad President..."
+        aria-label="Search people and officials"
+      >
+    </form>
+
+    <!-- LEGISLATIVE & PARLIAMENTARY REPRESENTATIVES -->
+    <section class="people-section" id="representatives">
+      <div class="people-section-heading">
+        <span class="eyebrow">ELECTED LEADERS</span>
+        <h2>Public Representatives</h2>
+        <p>Elected Members of Legislative Assembly (MLA) and Parliament (MP).</p>
+      </div>
+
+      <div class="people-grid">
+
+        <article class="people-card" data-search="aashish govind sharma mla khategaon vidhan sabha bjp representative">
+          <div class="people-icon" aria-hidden="true">👤</div>
+          <span class="people-badge-tag">MLA — Khategaon (173)</span>
+          <h3>Shri Aashish Govind Sharma</h3>
+          <ul>
+            <li>Member of Legislative Assembly (MLA) representing Khategaon Constituency.</li>
+            <li>Political Party: Bharatiya Janata Party (BJP).</li>
+            <li>Serving as the re-elected MLA dedicated to regional development and agricultural issues.</li>
+          </ul>
+          <span class="people-meta">Vidhan Sabha Representative</span>
+          <span class="people-meta-label">Constituency No. 173</span>
+        </article>
+
+        <article class="people-card" data-search="mahendra singh solanky mp dewas lok sabha parliament">
+          <div class="people-icon" aria-hidden="true">🏛️</div>
+          <span class="people-badge-tag">MP — Dewas Lok Sabha</span>
+          <h3>Shri Mahendra Singh Solanky</h3>
+          <ul>
+            <li>Member of Parliament (MP) representing Dewas Parliamentary constituency.</li>
+            <li>Political Party: Bharatiya Janata Party (BJP).</li>
+            <li>Oversees national schemes, railway expansion, and highway infrastructure across the district.</li>
+          </ul>
+          <span class="people-meta">Lok Sabha Representative</span>
+          <span class="people-meta-label">Dewas Constituency</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ADMINISTRATIVE OFFICIALS -->
+    <section class="people-section" id="administration">
+      <div class="people-section-heading">
+        <span class="eyebrow">DISTRICT & TEHSIL OFFICERS</span>
+        <h2>Key Administrative Officers</h2>
+        <p>Sub-Divisional Magistrate, Tehsildar, and local administration contacts.</p>
+      </div>
+
+      <div class="people-grid">
+
+        <article class="people-card" data-search="sdm praveen prajapati sub divisional magistrate office admin">
+          <div class="people-icon" aria-hidden="true">⚖️</div>
+          <span class="people-badge-tag">Sub-Divisional Magistrate</span>
+          <h3>Shri Praveen Prajapati</h3>
+          <ul>
+            <li>Sub-Divisional Magistrate (SDM) for Khategaon Sub-Division.</li>
+            <li>Head of local revenue court, law and order maintenance, and civil administration.</li>
+            <li>Office Location: SDM Office, Khategaon.</li>
+          </ul>
+          <span class="people-meta">Ph: 07274-233044</span>
+          <span class="people-meta-label">sdmkhategaon@gmail.com</span>
+        </article>
+
+        <article class="people-card" data-search="tehsildar revenue office khategaon tehsil officer">
+          <div class="people-icon" aria-hidden="true">📄</div>
+          <span class="people-badge-tag">Tehsil Revenue Officer</span>
+          <h3>Tehsildar Office Khategaon</h3>
+          <ul>
+            <li>In charge of land revenue administration, land records, and civic certifications.</li>
+            <li>Manages administrative functions for Khategaon tehsil villages.</li>
+          </ul>
+          <span class="people-meta">Tehsil Office</span>
+          <span class="people-meta-label">Civil Administration</span>
+        </article>
+
+        <article class="people-card" data-search="sdop police station law order deputy superintendent">
+          <div class="people-icon" aria-hidden="true">👮</div>
+          <span class="people-badge-tag">Sub-Divisional Officer (Police)</span>
+          <h3>SDOP Office Khategaon</h3>
+          <ul>
+            <li>Supervises police stations and law enforcement across the Khategaon sub-division.</li>
+            <li>Coordinates public emergency management and crime prevention.</li>
+          </ul>
+          <span class="people-meta">Police Sub-Division</span>
+          <span class="people-meta-label">Law & Order</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CIVIC & LOCAL BODIES -->
+    <section class="people-section" id="local-bodies">
+      <div class="people-section-heading">
+        <span class="eyebrow">LOCAL SELF-GOVERNMENT</span>
+        <h2>Nagar Parishad & Janpad Panchayat</h2>
+        <p>Elected local council leaders, Janpad representatives, and Ward Members.</p>
+      </div>
+
+      <div class="people-grid">
+
+        <article class="people-card" data-search="salita meram dhanware janpad panchayat president adhyaksh">
+          <div class="people-icon" aria-hidden="true">🏢</div>
+          <span class="people-badge-tag">Janpad Panchayat President</span>
+          <h3>Smt. Salita Meram Dhanware</h3>
+          <ul>
+            <li>Elected President (Adhyaksh) of Janpad Panchayat Khategaon.</li>
+            <li>Oversees rural panchayat development schemes, rural roads, and sanitation across 23 Janpad wards.</li>
+          </ul>
+          <span class="people-meta">Janpad Panchayat</span>
+          <span class="people-meta-label">Rural Administration Head</span>
+        </article>
+
+        <article class="people-card" data-search="manish patel vice president janpad panchayat upadhyaksh">
+          <div class="people-icon" aria-hidden="true">👥</div>
+          <span class="people-badge-tag">Janpad Vice President</span>
+          <h3>Shri Manish Patel</h3>
+          <ul>
+            <li>Vice President (Up-Adhyaksh) of Janpad Panchayat Khategaon.</li>
+            <li>Assists in execution of rural employment and infrastructure initiatives.</li>
+          </ul>
+          <span class="people-meta">Janpad Panchayat</span>
+          <span class="people-meta-label">Rural Governance</span>
+        </article>
+
+        <article class="people-card" data-search="nagar parishad chairman president chief municipal officer cmo ward members">
+          <div class="people-icon" aria-hidden="true">🏙️</div>
+          <span class="people-badge-tag">Nagar Parishad Khategaon</span>
+          <h3>Chairman & Chief Municipal Officer (CMO)</h3>
+          <ul>
+            <li><strong>CMO Office:</strong> Executive head of urban infrastructure, water supply, and town sanitation.</li>
+            <li><strong>Ward Members (Parshad):</strong> 15 ward councilors representing town neighborhoods.</li>
+          </ul>
+          <span class="people-meta">Nagar Parishad Office</span>
+          <span class="people-meta-label">Civic Body Management</span>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="local-notice">
+      <h3>Public Grievance Redressal</h3>
+      <p>
+        Citizens seeking administrative support or public grievance resolution can visit the SDM / Tehsil Office on official working days or lodge complaints via the MP Chief Minister Helpline at <strong>181</strong>.
+      </p>
+    </div>
+
+    <p style="margin-top:28px"><a href="../index.html" style="color:#155eef;font-weight:700">← Back to homepage</a></p>
+
+    <div class="people-disclaimer">
+      <strong>Note:</strong> Public official designations and administrative postings are subject to government tenure updates. Please refer to official Dewas district administration portal (dewas.nic.in) for updated administrative gazettes.
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("people-query");
+      const cards = [...document.querySelectorAll(".people-card")];
+
+      input.addEventListener("input", () => {
+        const query = input.value.trim().toLowerCase();
+
+        cards.forEach(card => {
+          const content = (
+            card.textContent + " " + (card.dataset.search || "")
+          ).toLowerCase();
+
+          card.hidden = !content.includes(query);
+        });
+
+        document.querySelectorAll(".people-section").forEach(section => {
+          const sectionCards = [
+            ...section.querySelectorAll(".people-card")
+          ];
+
+          if (sectionCards.length > 0) {
+            section.hidden = sectionCards.every(card => card.hidden);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Temples in Khategaon | Khategaon Local Guide</title>
+  <meta name="description" content="Explore prominent Jain temples, Hindu temples, and places of worship in and around Khategaon, Madhya Pradesh.">
+  <meta name="theme-color" content="#155eef">
+  <link rel="canonical" href="https://khategaon.github.io/pages/temples.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .temple-page {
+      padding-top: 45px;
+      padding-bottom: 75px;
+    }
+
+    .temple-hero {
+      padding: 35px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #eef4ff, #f8faff);
+      border: 1px solid #e1eaff;
+      margin-bottom: 30px;
+    }
+
+    .temple-hero h1 {
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -1.8px;
+      line-height: 1.15;
+      margin: 10px 0;
+    }
+
+    .temple-hero p {
+      max-width: 650px;
+      color: #63718a;
+      margin-bottom: 20px;
+    }
+
+    .temple-main-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #155eef;
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .temple-main-badge strong {
+      font-size: 22px;
+    }
+
+    .temple-search {
+      display: flex;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .temple-search input {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #dfe6f1;
+      border-radius: 11px;
+      padding: 13px 15px;
+      outline: none;
+      background: #fff;
+    }
+
+    .temple-search input:focus {
+      border-color: #155eef;
+      box-shadow: 0 0 0 3px #155eef18;
+    }
+
+    .temple-section {
+      margin-top: 36px;
+      scroll-margin-top: 25px;
+    }
+
+    .temple-section-heading {
+      margin-bottom: 18px;
+    }
+
+    .temple-section-heading h2 {
+      font-size: 24px;
+      letter-spacing: -.6px;
+      margin: 5px 0;
+    }
+
+    .temple-section-heading p {
+      color: #63718a;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .temple-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .temple-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e6ebf3;
+      border-radius: 16px;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+
+    .temple-card:hover {
+      border-color: #c5d7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px #1837690b;
+    }
+
+    .temple-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .temple-card h3 {
+      font-size: 15px;
+      margin: 0 0 5px;
+    }
+
+    .temple-card p {
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0 0 15px;
+      flex: 1;
+    }
+
+    .temple-card ul {
+      margin: 0 0 15px 0;
+      padding-left: 18px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .temple-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .temple-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #155eef;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .temple-meta-label {
+      display: block;
+      color: #8793a6;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+
+    .temple-rating {
+      background: #fff7df;
+      color: #775c18;
+      font-size: 11px;
+      font-weight: 750;
+      padding: 3px 7px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .local-notice {
+      margin-top: 20px;
+      border: 1px solid #dce7ff;
+      background: #f6f9ff;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .local-notice h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .local-notice p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #63718a;
+    }
+
+    .temple-disclaimer {
+      margin-top: 28px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .temple-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .temple-page {
+        padding-top: 25px;
+      }
+
+      .temple-hero {
+        padding: 23px;
+      }
+
+      .temple-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .temple-card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <div id="site-navbar"></div>
+
+  <main class="container temple-page">
+
+    <section class="temple-hero">
+      <span class="eyebrow">KHATEGAON LOCAL GUIDE</span>
+      <h1>Temples in Khategaon</h1>
+      <p>
+        Khategaon is home to several prominent spiritual sites that draw local devotees and visitors for worship and unique historical connections.
+      </p>
+
+      <div class="temple-main-badge">
+        <span aria-hidden="true">🛕</span>
+        <span>Sacred Heritage <strong>Spiritual Shrines</strong></span>
+      </div>
+    </section>
+
+    <form class="temple-search" id="temple-search" role="search">
+      <input
+        type="search"
+        id="temple-query"
+        placeholder="Search Munisuvratnath, Sai Temple, Vijasan, Gyareshwar, Laxminarayan..."
+        aria-label="Search temples in Khategaon"
+      >
+    </form>
+
+    <!-- JAIN TEMPLES -->
+    <section class="temple-section" id="jain-temples">
+      <div class="temple-section-heading">
+        <span class="eyebrow">JAIN HERITAGE</span>
+        <h2>Jain Temples</h2>
+        <p>Revered Digambar Jain places of worship deeply anchored in local history.</p>
+      </div>
+
+      <div class="temple-grid">
+
+        <article class="temple-card" data-search="shree digambar jain munisuvratnath jinalay 200 year old idol narmada river navgraha pooja 4.1">
+          <div class="temple-icon" aria-hidden="true">☸️</div>
+          <span class="temple-rating">★ 4.1 (18 reviews)</span>
+          <h3>Shree Digambar Jain Munisuvratnath Jinalay</h3>
+          <ul>
+            <li>Highly revered temple deeply anchored in local history.</li>
+            <li>Houses a nearly 200-year-old idol of Lord Munisuvratnath, miraculously retrieved from the Narmada River.</li>
+            <li>Devotees frequent this sacred site particularly for its Navgraha Pooja rituals.</li>
+          </ul>
+          <span class="temple-meta">NH 59A</span>
+          <span class="temple-meta-label">Plus Code: HWW3+Q9R</span>
+        </article>
+
+        <article class="temple-card" data-search="shree digambar jain chandraprabh chaubeesee jinalay patwari malloha jain">
+          <div class="temple-icon" aria-hidden="true">☸️</div>
+          <span class="temple-rating">Digambar Jain Shrine</span>
+          <h3>Shree Digambar Jain Chandraprabh Chaubeesee Jinalay</h3>
+          <p>Located in the Patwari Malloha area, this is another significant spiritual hub for the Digambar Jain community in town.</p>
+          <span class="temple-meta">Patwari Malloha Area</span>
+          <span class="temple-meta-label">Digambar Jain Community Hub</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROMINENT HINDU TEMPLES -->
+    <section class="temple-section" id="hindu-temples">
+      <div class="temple-section-heading">
+        <span class="eyebrow">MAJOR SHRINES</span>
+        <h2>Hindu Temples</h2>
+        <p>Popular places of worship, central pilgrimage spots, and vibrant local shrines.</p>
+      </div>
+
+      <div class="temple-grid">
+
+        <article class="temple-card" data-search="sai temple garden aarti evening 4.1">
+          <div class="temple-icon" aria-hidden="true">🕉️</div>
+          <span class="temple-rating">★ 4.1 (49 reviews)</span>
+          <h3>Sai Temple</h3>
+          <ul>
+            <li>One of the most popular and widely visited shrines in the town.</li>
+            <li>Visitors appreciate it as a peaceful place for prayer and a scenic local spot featuring a nice garden.</li>
+            <li>Devotees visit daily in large numbers in the evening for Sai Baba Aarti.</li>
+          </ul>
+          <span class="temple-meta">Main Town</span>
+          <span class="temple-meta-label">Popular Evening Aarti</span>
+        </article>
+
+        <article class="temple-card" data-search="laxminarayan mandir barcha road green nature open 24 hours 4.2">
+          <div class="temple-icon" aria-hidden="true">🛕</div>
+          <span class="temple-rating">★ 4.2 (22 reviews)</span>
+          <h3>Laxminarayan Mandir</h3>
+          <ul>
+            <li>Situated on Barcha Road, acting as a central pilgrimage site for the surrounding area.</li>
+            <li>Offers a serene environment shaded by natural greenery.</li>
+            <li>Open 24 hours for quiet prayer and reflection.</li>
+          </ul>
+          <span class="temple-meta">Barcha Road</span>
+          <span class="temple-meta-label">Plus Code: HWQ5+CVR</span>
+        </article>
+
+        <article class="temple-card" data-search="maa vijasan dham mata mandir ghodi ghat kunwar margashirsh navratri festival 4.1">
+          <div class="temple-icon" aria-hidden="true">🌺</div>
+          <span class="temple-rating">★ 4.1 (7 reviews)</span>
+          <h3>Maa Vijasan Dham Mata Mandir</h3>
+          <ul>
+            <li>Located near the Ghodi Ghat area, dedicated to Goddess Vijasan.</li>
+            <li>Experiences its largest crowds of pilgrims during the Kunwar (Margashirsh) Navratri festival celebrations.</li>
+          </ul>
+          <span class="temple-meta">Ghodi Ghat Area</span>
+          <span class="temple-meta-label">Navratri Pilgrimage Site</span>
+        </article>
+
+        <article class="temple-card" data-search="shri gyareshwar mahadev mandir shiva monday prayers">
+          <div class="temple-icon" aria-hidden="true">🔱</div>
+          <span class="temple-rating">Shiva Shrine</span>
+          <h3>Shri Gyareshwar Mahadev Mandir</h3>
+          <ul>
+            <li>A dedicated local shrine for Lord Shiva.</li>
+            <li>Devotees gather here in large numbers every Monday to perform special prayers and pour offerings.</li>
+          </ul>
+          <span class="temple-meta">Khategaon Town</span>
+          <span class="temple-meta-label">Special Monday Gathering</span>
+        </article>
+
+        <article class="temple-card" data-search="shree narsingh temple 4.7">
+          <div class="temple-icon" aria-hidden="true">🛕</div>
+          <span class="temple-rating">★ 4.7 (13 reviews)</span>
+          <h3>Shree Narsingh Temple</h3>
+          <p>Revered Hindu temple in Khategaon known for its historical background and spiritual atmosphere.</p>
+          <span class="temple-meta">HWW9+V7M</span>
+          <span class="temple-meta-label">Unnamed Road</span>
+        </article>
+
+        <article class="temple-card" data-search="shankar temple ajnas rd 4.2">
+          <div class="temple-icon" aria-hidden="true">🔱</div>
+          <span class="temple-rating">★ 4.2 (26 reviews)</span>
+          <h3>Shankar Temple</h3>
+          <p>Well-visited Shiva shrine located conveniently along Ajnas Road.</p>
+          <span class="temple-meta">Ajnas Road</span>
+          <span class="temple-meta-label">Plus Code: HWV4+9X4</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LOCAL COMMUNITY SHRINES -->
+    <section class="temple-section" id="community-shrines">
+      <div class="temple-section-heading">
+        <span class="eyebrow">LOCAL DIRECTORY</span>
+        <h2>Other Local & Neighborhood Shrines</h2>
+        <p>Additional places of worship and community shrines around Khategaon tehsil.</p>
+      </div>
+
+      <div class="temple-grid">
+
+        <article class="temple-card" data-search="shri jambheshwar temple 4.4">
+          <div class="temple-icon" aria-hidden="true">🛕</div>
+          <span class="temple-rating">★ 4.4 (20 reviews)</span>
+          <h3>Shri Jambheshwar Temple</h3>
+          <p>Important shrine for followers of Jambheshwar Bhagwan in the local region.</p>
+          <span class="temple-meta">HWW3+MPQ</span>
+          <span class="temple-meta-label">Khategaon</span>
+        </article>
+
+        <article class="temple-card" data-search="ganesh temple narmada colony 4.0">
+          <div class="temple-icon" aria-hidden="true">🐘</div>
+          <span class="temple-rating">★ 4.0 (10 reviews)</span>
+          <h3>Ganesh Temple (Narmada Colony)</h3>
+          <p>Known locally as one of the most beautiful neighborhood temples in Khategaon.</p>
+          <span class="temple-meta">Narmada Colony</span>
+          <span class="temple-meta-label">Plus Code: HWR7+2V2</span>
+        </article>
+
+        <article class="temple-card" data-search="shri balaji hanuman temple 4.0">
+          <div class="temple-icon" aria-hidden="true">🚩</div>
+          <span class="temple-rating">★ 4.0 (12 reviews)</span>
+          <h3>Shri Balaji Hanuman Temple</h3>
+          <p>Sacred temple dedicated to Lord Hanuman and Lord Balaji.</p>
+          <span class="temple-meta">HWV3+VMW</span>
+          <span class="temple-meta-label">Khategaon</span>
+        </article>
+
+        <article class="temple-card" data-search="shree ram mandir rameshwar mahadev yadavmohalla 4.2">
+          <div class="temple-icon" aria-hidden="true">🛕</div>
+          <span class="temple-rating">★ 4.2 (5 reviews)</span>
+          <h3>Shree Ram Mandir (Rameshwar Mahadev)</h3>
+          <p>Neighborhood temple situated in Yadav Mohalla bringing together Rama and Shiva devotion.</p>
+          <span class="temple-meta">Yadav Mohalla</span>
+          <span class="temple-meta-label">Plus Code: JWQW+MHP</span>
+        </article>
+
+        <article class="temple-card" data-search="narmda temple 3.7">
+          <div class="temple-icon" aria-hidden="true">🌊</div>
+          <span class="temple-rating">★ 3.7 (7 reviews)</span>
+          <h3>Narmada Temple</h3>
+          <p>Sacred shrine dedicated to the holy Narmada River.</p>
+          <span class="temple-meta">HWV8+34C</span>
+          <span class="temple-meta-label">Khategaon</span>
+        </article>
+
+        <article class="temple-card" data-search="katlay hanuman mandir 4.2">
+          <div class="temple-icon" aria-hidden="true">🚩</div>
+          <span class="temple-rating">★ 4.2 (17 reviews)</span>
+          <h3>Katlay Hanuman Mandir</h3>
+          <p>Highly revered local Hanuman temple known for its serene surroundings.</p>
+          <span class="temple-meta">PPGX+W66</span>
+          <span class="temple-meta-label">Local Shrine</span>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="local-notice">
+      <h3>Visiting Khategaon Temples</h3>
+      <p>
+        Special rituals and larger gatherings take place during major Hindu and Jain festivals such as Navratri, Mahashivratri, Hanuman Jayanti, and Paryushan. Morning and evening Aarti hours are recommended times for visits.
+      </p>
+    </div>
+
+    <p style="margin-top:28px"><a href="../index.html" style="color:#155eef;font-weight:700">← Back to homepage</a></p>
+
+    <div class="temple-disclaimer">
+      <strong>Important:</strong> Timings for daily rituals, Aarti, and festival celebrations may vary. Visitors are advised to check locally when planning visits during special religious events.
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("temple-query");
+      const cards = [...document.querySelectorAll(".temple-card")];
+
+      input.addEventListener("input", () => {
+        const query = input.value.trim().toLowerCase();
+
+        cards.forEach(card => {
+          const content = (
+            card.textContent + " " + (card.dataset.search || "")
+          ).toLowerCase();
+
+          card.hidden = !content.includes(query);
+        });
+
+        document.querySelectorAll(".temple-section").forEach(section => {
+          const sectionCards = [
+            ...section.querySelectorAll(".temple-card")
+          ];
+
+          if (sectionCards.length > 0) {
+            section.hidden = sectionCards.every(card => card.hidden);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

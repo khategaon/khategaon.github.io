@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Main Areas of Khategaon | Khategaon Local Guide</title>
+  <meta name="description" content="Explore key neighborhoods, transportation hubs, agricultural market yards, arterial roads, and residential colonies in Khategaon, Madhya Pradesh.">
+  <meta name="theme-color" content="#155eef">
+  <link rel="canonical" href="https://khategaon.github.io/pages/areas.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .area-page {
+      padding-top: 45px;
+      padding-bottom: 75px;
+    }
+
+    .area-hero {
+      padding: 35px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #eef4ff, #f8faff);
+      border: 1px solid #e1eaff;
+      margin-bottom: 30px;
+    }
+
+    .area-hero h1 {
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -1.8px;
+      line-height: 1.15;
+      margin: 10px 0;
+    }
+
+    .area-hero p {
+      max-width: 650px;
+      color: #63718a;
+      margin-bottom: 20px;
+    }
+
+    .area-main-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #155eef;
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .area-main-badge strong {
+      font-size: 22px;
+    }
+
+    .area-search {
+      display: flex;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .area-search input {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #dfe6f1;
+      border-radius: 11px;
+      padding: 13px 15px;
+      outline: none;
+      background: #fff;
+    }
+
+    .area-search input:focus {
+      border-color: #155eef;
+      box-shadow: 0 0 0 3px #155eef18;
+    }
+
+    .area-section {
+      margin-top: 36px;
+      scroll-margin-top: 25px;
+    }
+
+    .area-section-heading {
+      margin-bottom: 18px;
+    }
+
+    .area-section-heading h2 {
+      font-size: 24px;
+      letter-spacing: -.6px;
+      margin: 5px 0;
+    }
+
+    .area-section-heading p {
+      color: #63718a;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .area-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e6ebf3;
+      border-radius: 16px;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+
+    .area-card:hover {
+      border-color: #c5d7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px #1837690b;
+    }
+
+    .area-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .area-card h3 {
+      font-size: 15px;
+      margin: 0 0 5px;
+    }
+
+    .area-card p {
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0 0 15px;
+      flex: 1;
+    }
+
+    .area-card ul {
+      margin: 0 0 15px 0;
+      padding-left: 18px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .area-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .area-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #155eef;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .area-meta-label {
+      display: block;
+      color: #8793a6;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+
+    .area-badge-tag {
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 11px;
+      font-weight: 750;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .local-notice {
+      margin-top: 20px;
+      border: 1px solid #dce7ff;
+      background: #f6f9ff;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .local-notice h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .local-notice p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #63718a;
+    }
+
+    .area-disclaimer {
+      margin-top: 28px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .area-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .area-page {
+        padding-top: 25px;
+      }
+
+      .area-hero {
+        padding: 23px;
+      }
+
+      .area-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .area-card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <div id="site-navbar"></div>
+
+  <main class="container area-page">
+
+    <section class="area-hero">
+      <span class="eyebrow">KHATEGAON LOCAL GUIDE</span>
+      <h1>Main Areas of Khategaon</h1>
+      <p>
+        Khategaon's geography, high-traffic corridors, and daily commuter patterns are shaped by several prominent roads, agricultural trading hubs, and residential zones.
+      </p>
+
+      <div class="area-main-badge">
+        <span aria-hidden="true">🗺️</span>
+        <span>Town Layout <strong>Hubs & Corridors</strong></span>
+      </div>
+    </section>
+
+    <form class="area-search" id="area-search" role="search">
+      <input
+        type="search"
+        id="area-query"
+        placeholder="Search bus stand, mandi, imli bazar, NH 47, mahajan township, nemawar road..."
+        aria-label="Search areas in Khategaon"
+      >
+    </form>
+
+    <!-- PRIMARY TRAFFIC & TRANSPORT HUBS -->
+    <section class="area-section" id="transport-hubs">
+      <div class="area-section-heading">
+        <span class="eyebrow">TRANSIT & COMMERCE</span>
+        <h2>Primary Traffic & Transport Hubs</h2>
+        <p>Central interchange hubs and economic engines driving daily movement across town.</p>
+      </div>
+
+      <div class="area-grid">
+
+        <article class="area-card" data-search="bus stand khategaon transit indore harda bhopal dewas crossroads auto-rickshaws">
+          <div class="area-icon" aria-hidden="true">🚌</div>
+          <span class="area-badge-tag">Central Transit Hub</span>
+          <h3>Bus Stand Khategaon</h3>
+          <ul>
+            <li>Serves as the most critical transit point and central crossroads in the city, handling the bulk of daily traffic.</li>
+            <li>Operates as the prime regional interchange, routing passenger traffic continuously to major cities like Indore, Harda, Bhopal, and Dewas.</li>
+            <li>Sees high traffic density day and night due to a continuous influx of commuters, local auto-rickshaws, and regional buses.</li>
+          </ul>
+          <span class="area-meta">Central Junction</span>
+          <span class="area-meta-label">Primary Regional Interchange</span>
+        </article>
+
+        <article class="area-card" data-search="khategaon anaaj mandi yard grain market agriculture harvest traffic tractor cargo trucks ashta kannod">
+          <div class="area-icon" aria-hidden="true">🌾</div>
+          <span class="area-badge-tag">Agricultural Trade Complex</span>
+          <h3>Khategaon Anaaj Mandi Yard</h3>
+          <ul>
+            <li>Massive agricultural market complex driving the local economy and dictating major seasonal traffic conditions.</li>
+            <li>Notably larger than neighboring agricultural trading facilities in Ashta or Kannod.</li>
+            <li>Experiences heavy vehicle congestion during harvest seasons when lines of agricultural tractors and cargo trucks line up to trade grain.</li>
+          </ul>
+          <span class="area-meta">Mandi Area</span>
+          <span class="area-meta-label">Regional Grain Market Hub</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MAJOR MARKET AREAS & ARTERIAL ROADS -->
+    <section class="area-section" id="markets-highways">
+      <div class="area-section-heading">
+        <span class="eyebrow">RETAIL & HIGHWAYS</span>
+        <h2>Major Market Areas & Arterial Roads</h2>
+        <p>High-density retail thoroughfares and high-velocity transit highways connecting the town.</p>
+      </div>
+
+      <div class="area-grid">
+
+        <article class="area-card" data-search="imli bazar veersavarkar marg main shopping retail inner town pedestrian lanes">
+          <div class="area-icon" aria-hidden="true">🛍️</div>
+          <span class="area-badge-tag">Historic Retail Market</span>
+          <h3>Imli Bazar</h3>
+          <ul>
+            <li>Located along Veersavarkar Marg, serving as the historical heart of the town's retail trading.</li>
+            <li>Recognized as the main shopping hub for the city and surrounding villages, drawing thick pedestrian crowds in afternoon and evening.</li>
+            <li>Defined by narrow lanes and high foot traffic, making parking or navigating larger vehicles challenging.</li>
+          </ul>
+          <span class="area-meta">Veersavarkar Marg</span>
+          <span class="area-meta-label">Main Shopping Street</span>
+        </article>
+
+        <article class="area-card" data-search="national highway 47 nh 47 indore harda corridor interstate freight long-haul trucks">
+          <div class="area-icon" aria-hidden="true">🛣️</div>
+          <span class="area-badge-tag">Interstate Transport Corridor</span>
+          <h3>National Highway 47 (Indore-Harda Road Corridor)</h3>
+          <ul>
+            <li>High-velocity highway stretch cutting directly through Khategaon.</li>
+            <li>Carries heavy interstate freight, commercial long-haul trucks, and private passenger vehicles moving between Indore and southern Madhya Pradesh.</li>
+          </ul>
+          <span class="area-meta">NH-47 Stretch</span>
+          <span class="area-meta-label">Indore–Harda Corridor</span>
+        </article>
+
+        <article class="area-card" data-search="nemawar road stretch sacred river narmada tourist freight trucks pilgrims">
+          <div class="area-icon" aria-hidden="true">🌊</div>
+          <span class="area-badge-tag">Pilgrimage & Commercial Arterial</span>
+          <h3>Nemawar Road Stretch</h3>
+          <ul>
+            <li>Branching off toward the sacred destination of Nemawar along the Narmada River.</li>
+            <li>Experiences a steady blend of daily local transport, heavy freight trucks, and tourist/pilgrim vehicles.</li>
+          </ul>
+          <span class="area-meta">Nemawar Road</span>
+          <span class="area-meta-label">Route to Narmada Ghats</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- NOTABLE RESIDENTIAL & EXPANSION AREAS -->
+    <section class="area-section" id="residential-zones">
+      <div class="area-section-heading">
+        <span class="eyebrow">URBAN EXPANSION</span>
+        <h2>Notable Residential & Expansion Areas</h2>
+        <p>Modern housing developments and planned residential colonies surrounding the town center.</p>
+      </div>
+
+      <div class="area-grid">
+
+        <article class="area-card" data-search="mahajan township planned grid layout south of nh 47 residential expansion">
+          <div class="area-icon" aria-hidden="true">🏡</div>
+          <span class="area-badge-tag">Modern Planned Township</span>
+          <h3>Mahajan Township</h3>
+          <ul>
+            <li>Situated just south of National Highway 47, marking one of the town's key planned residential expansion zones.</li>
+            <li>Features a structured grid layout that stands in contrast to the dense, winding layout of older inner-town neighborhoods.</li>
+          </ul>
+          <span class="area-meta">South of NH-47</span>
+          <span class="area-meta-label">Planned Residential Zone</span>
+        </article>
+
+        <article class="area-card" data-search="rajat kunj colony gated housing 10 acres nemawar road quiet fringe">
+          <div class="area-icon" aria-hidden="true">🏘️</div>
+          <span class="area-badge-tag">Gated Housing Colony</span>
+          <h3>Rajat Kunj Colony</h3>
+          <ul>
+            <li>Positioned just off Nemawar Road, this gated housing development spans approximately 10 acres.</li>
+            <li>Represents a growing residential hub on the urban fringe, offering a quieter environment removed from heavy commercial crowds.</li>
+          </ul>
+          <span class="area-meta">Off Nemawar Road</span>
+          <span class="area-meta-label">Gated Residential Hub</span>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="local-notice">
+      <h3>Local Commute & Navigation Tip</h3>
+      <p>
+        During crop harvest months (March–May & October–November), expect temporary heavy traffic slows around Anaaj Mandi and the NH-47 bypass junction due to tractor lines. For retail shopping in Imli Bazar, walking or two-wheeler transport is recommended over four-wheelers.
+      </p>
+    </div>
+
+    <p style="margin-top:28px"><a href="../index.html" style="color:#155eef;font-weight:700">← Back to homepage</a></p>
+
+    <div class="area-disclaimer">
+      <strong>Note:</strong> Road alignments, market timings, and traffic flow patterns are subject to civic administration guidelines issued by the Khategaon Nagar Parishad and local traffic police.
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("area-query");
+      const cards = [...document.querySelectorAll(".area-card")];
+
+      input.addEventListener("input", () => {
+        const query = input.value.trim().toLowerCase();
+
+        cards.forEach(card => {
+          const content = (
+            card.textContent + " " + (card.dataset.search || "")
+          ).toLowerCase();
+
+          card.hidden = !content.includes(query);
+        });
+
+        document.querySelectorAll(".area-section").forEach(section => {
+          const sectionCards = [
+            ...section.querySelectorAll(".area-card")
+          ];
+
+          if (sectionCards.length > 0) {
+            section.hidden = sectionCards.every(card => card.hidden);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

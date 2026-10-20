@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Helpline Numbers | Khategaon</title>
+  <meta name="description" content="Find important emergency helpline numbers and public service contacts for Khategaon, Madhya Pradesh.">
+  <meta name="theme-color" content="#155eef">
+  <link rel="canonical" href="https://khategaon.github.io/pages/helplines.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .help-page {
+      padding-top: 45px;
+      padding-bottom: 75px;
+    }
+
+    .help-hero {
+      padding: 35px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #eef4ff, #f8faff);
+      border: 1px solid #e1eaff;
+      margin-bottom: 30px;
+    }
+
+    .help-hero h1 {
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -1.8px;
+      line-height: 1.15;
+      margin: 10px 0;
+    }
+
+    .help-hero p {
+      max-width: 650px;
+      color: #63718a;
+      margin-bottom: 20px;
+    }
+
+    .emergency-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #155eef;
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .emergency-call:hover {
+      background: #1247b8;
+    }
+
+    .emergency-call strong {
+      font-size: 23px;
+    }
+
+    .help-search {
+      display: flex;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .help-search input {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #dfe6f1;
+      border-radius: 11px;
+      padding: 13px 15px;
+      outline: none;
+      background: #fff;
+    }
+
+    .help-search input:focus {
+      border-color: #155eef;
+      box-shadow: 0 0 0 3px #155eef18;
+    }
+
+    .help-section {
+      margin-top: 36px;
+      scroll-margin-top: 25px;
+    }
+
+    .help-section-heading {
+      margin-bottom: 18px;
+    }
+
+    .help-section-heading h2 {
+      font-size: 24px;
+      letter-spacing: -.6px;
+      margin: 5px 0;
+    }
+
+    .help-section-heading p {
+      color: #63718a;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .help-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e6ebf3;
+      border-radius: 16px;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+
+    .help-card:hover {
+      border-color: #c5d7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px #1837690b;
+    }
+
+    .help-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .help-card h3 {
+      font-size: 15px;
+      margin: 0 0 5px;
+    }
+
+    .help-card p {
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0 0 15px;
+      flex: 1;
+    }
+
+    .help-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #155eef;
+      font-size: 21px;
+      font-weight: 850;
+      letter-spacing: -.5px;
+    }
+
+    .help-number:hover {
+      text-decoration: underline;
+    }
+
+    .help-number-label {
+      display: block;
+      color: #8793a6;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+
+    .local-notice {
+      margin-top: 20px;
+      border: 1px solid #dce7ff;
+      background: #f6f9ff;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .local-notice h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .local-notice p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #63718a;
+    }
+
+    .local-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .local-item {
+      padding: 18px;
+      border: 1px solid #e6ebf3;
+      border-radius: 13px;
+    }
+
+    .local-item h3 {
+      font-size: 14px;
+      margin: 0 0 6px;
+    }
+
+    .local-item p {
+      font-size: 12px;
+      color: #63718a;
+      margin: 0 0 10px;
+    }
+
+    .verify-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 750;
+      color: #775c18;
+      background: #fff7df;
+      padding: 5px 8px;
+      border-radius: 6px;
+    }
+
+    .help-empty {
+      padding: 25px;
+      text-align: center;
+      background: #f8faff;
+      border-radius: 12px;
+      color: #63718a;
+      grid-column: 1 / -1;
+    }
+
+    .help-disclaimer {
+      margin-top: 28px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .help-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .help-page {
+        padding-top: 25px;
+      }
+
+      .help-hero {
+        padding: 23px;
+      }
+
+      .help-grid,
+      .local-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .help-card {
+        padding: 18px;
+      }
+
+      .help-number {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <div id="site-navbar"></div>
+
+  <main class="container help-page">
+
+    <section class="help-hero">
+      <span class="eyebrow">IMPORTANT CONTACTS</span>
+      <h1>Khategaon Helpline Numbers</h1>
+      <p>
+        Find emergency numbers and essential public-service helplines
+        for residents and visitors of Khategaon, Madhya Pradesh.
+      </p>
+
+      <a class="emergency-call" href="tel:112">
+        <span aria-hidden="true">☎</span>
+        <span>Emergency assistance <strong>112</strong></span>
+      </a>
+    </section>
+
+    <form class="help-search" id="helpline-search" role="search">
+      <input
+        type="search"
+        id="helpline-query"
+        placeholder="Search police, ambulance, child helpline..."
+        aria-label="Search helpline numbers"
+      >
+    </form>
+
+    <section class="help-section" id="emergency">
+      <div class="help-section-heading">
+        <span class="eyebrow">QUICK ACCESS</span>
+        <h2>Emergency Helplines</h2>
+        <p>Important numbers for urgent assistance in India.</p>
+      </div>
+
+      <div class="help-grid" id="emergency-grid">
+
+        <article class="help-card" data-search="112 emergency police fire ambulance">
+          <div class="help-icon" aria-hidden="true">☎</div>
+          <h3>National Emergency</h3>
+          <p>Unified emergency response for police, fire and medical emergencies.</p>
+          <a class="help-number" href="tel:112">112 ↗</a>
+          <span class="help-number-label">Emergency response</span>
+        </article>
+
+        <article class="help-card" data-search="102 108 ambulance medical hospital">
+          <div class="help-icon" aria-hidden="true">✚</div>
+          <h3>Ambulance Service</h3>
+          <p>Medical transport and ambulance assistance. Service availability may vary.</p>
+          <a class="help-number" href="tel:102">102 ↗</a>
+          <span class="help-number-label">National ambulance service</span>
+        </article>
+
+        <article class="help-card" data-search="100 police crime law enforcement">
+          <div class="help-icon" aria-hidden="true">⚑</div>
+          <h3>Police</h3>
+          <p>For police assistance. Use 112 for integrated emergency response.</p>
+          <a class="help-number" href="tel:112">112 ↗</a>
+          <span class="help-number-label">Unified emergency number</span>
+        </article>
+
+        <article class="help-card" data-search="101 fire rescue fire brigade">
+          <div class="help-icon" aria-hidden="true">♨</div>
+          <h3>Fire & Rescue</h3>
+          <p>For fire-related emergencies and rescue assistance.</p>
+          <a class="help-number" href="tel:101">101 ↗</a>
+          <span class="help-number-label">Fire service</span>
+        </article>
+
+        <article class="help-card" data-search="1073 road accident highway">
+          <div class="help-icon" aria-hidden="true">＋</div>
+          <h3>Road Accident Assistance</h3>
+          <p>Road accident assistance and relevant emergency information.</p>
+          <a class="help-number" href="tel:1073">1073 ↗</a>
+          <span class="help-number-label">Road accident helpline</span>
+        </article>
+
+        <article class="help-card" data-search="1930 cybercrime online fraud scam digital payment">
+          <div class="help-icon" aria-hidden="true">⌘</div>
+          <h3>Cybercrime Helpline</h3>
+          <p>Report cybercrime and online financial fraud. Report promptly.</p>
+          <a class="help-number" href="tel:1930">1930 ↗</a>
+          <span class="help-number-label">Cybercrime reporting</span>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="help-section" id="public-support">
+      <div class="help-section-heading">
+        <span class="eyebrow">PUBLIC SUPPORT</span>
+        <h2>People & Family Support</h2>
+        <p>Helplines for people who need additional support or assistance.</p>
+      </div>
+
+      <div class="help-grid">
+
+        <article class="help-card" data-search="181 women safety women helpline support">
+          <div class="help-icon" aria-hidden="true">♡</div>
+          <h3>Women’s Helpline</h3>
+          <p>Support and assistance for women in distress.</p>
+          <a class="help-number" href="tel:181">181 ↗</a>
+          <span class="help-number-label">Women’s assistance</span>
+        </article>
+
+        <article class="help-card" data-search="1098 child children protection childline">
+          <div class="help-icon" aria-hidden="true">♧</div>
+          <h3>Child Helpline</h3>
+          <p>Assistance for children in distress or needing protection.</p>
+          <a class="help-number" href="tel:1098">1098 ↗</a>
+          <span class="help-number-label">Child protection</span>
+        </article>
+
+        <article class="help-card" data-search="14567 senior citizen elderly support">
+          <div class="help-icon" aria-hidden="true">♙</div>
+          <h3>Senior Citizens Helpline</h3>
+          <p>Information and support services for older adults.</p>
+          <a class="help-number" href="tel:14567">14567 ↗</a>
+          <span class="help-number-label">Elderly support</span>
+        </article>
+
+        <article class="help-card" data-search="139 railway train passenger assistance">
+          <div class="help-icon" aria-hidden="true">▤</div>
+          <h3>Railway Helpline</h3>
+          <p>Railway enquiries and passenger assistance.</p>
+          <a class="help-number" href="tel:139">139 ↗</a>
+          <span class="help-number-label">Railway assistance</span>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="help-section" id="other-services">
+      <div class="help-section-heading">
+        <span class="eyebrow">OTHER SERVICES</span>
+        <h2>Essential Service Numbers</h2>
+        <p>Additional national helplines for common needs.</p>
+      </div>
+
+      <div class="help-grid">
+
+        <article class="help-card" data-search="1906 lpg gas leak cooking gas">
+          <div class="help-icon" aria-hidden="true">⌁</div>
+          <h3>LPG Gas Leak</h3>
+          <p>Report an LPG gas leak to the relevant emergency service.</p>
+          <a class="help-number" href="tel:1906">1906 ↗</a>
+          <span class="help-number-label">LPG leak helpline</span>
+        </article>
+
+        <article class="help-card" data-search="1915 consumer complaints consumer rights">
+          <div class="help-icon" aria-hidden="true">▣</div>
+          <h3>Consumer Helpline</h3>
+          <p>Consumer complaints and information about consumer rights.</p>
+          <a class="help-number" href="tel:1915">1915 ↗</a>
+          <span class="help-number-label">National Consumer Helpline</span>
+        </article>
+
+        <article class="help-card" data-search="1070 disaster relief flood calamity">
+          <div class="help-icon" aria-hidden="true">⌁</div>
+          <h3>Disaster Assistance</h3>
+          <p>Disaster-related assistance. Confirm the applicable state service.</p>
+          <a class="help-number" href="tel:1070">1070 ↗</a>
+          <span class="help-number-label">Relief and disaster services</span>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="help-section" id="khategaon-contacts">
+      <div class="help-section-heading">
+        <span class="eyebrow">LOCAL DIRECTORY</span>
+        <h2>Khategaon Local Contacts</h2>
+        <p>Local contact information can be added here after verification.</p>
+      </div>
+
+      <div class="local-notice">
+        <h3>Help keep local information accurate</h3>
+        <p>
+          The following local listings are placeholders, not confirmed
+          contact details. Add official phone numbers only after checking
+          them with the relevant department or institution.
+        </p>
+      </div>
+
+      <div class="local-grid">
+
+        <article class="local-item">
+          <h3>Khategaon Police Station</h3>
+          <p>Official station contact and address.</p>
+          <span class="verify-label">Contact details to verify</span>
+        </article>
+
+        <article class="local-item">
+          <h3>Government Hospital</h3>
+          <p>Hospital reception and emergency department contact.</p>
+          <span class="verify-label">Contact details to verify</span>
+        </article>
+
+        <article class="local-item">
+          <h3>Fire Service</h3>
+          <p>Local fire station and rescue contact.</p>
+          <span class="verify-label">Contact details to verify</span>
+        </article>
+
+        <article class="local-item">
+          <h3>Municipal / Local Administration</h3>
+          <p>Official civic complaints and public service contact.</p>
+          <span class="verify-label">Contact details to verify</span>
+        </article>
+
+        <article class="local-item">
+          <h3>Electricity Complaint Office</h3>
+          <p>Local electricity distribution complaint contact.</p>
+          <span class="verify-label">Contact details to verify</span>
+        </article>
+
+        <article class="local-item">
+          <h3>Ambulance & Blood Bank</h3>
+          <p>Verified local medical transport and blood bank contacts.</p>
+          <span class="verify-label">Contact details to verify</span>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="help-disclaimer">
+      <strong>Important:</strong> This page is an informational directory,
+      not an emergency dispatch service. In an immediate emergency in India,
+      call 112. National helpline availability and local service details
+      should be confirmed with official sources. Do not rely on unverified
+      local numbers in an emergency.
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("helpline-query");
+      const cards = [...document.querySelectorAll(".help-card")];
+
+      input.addEventListener("input", () => {
+        const query = input.value.trim().toLowerCase();
+
+        cards.forEach(card => {
+          const content = (
+            card.textContent + " " + (card.dataset.search || "")
+          ).toLowerCase();
+
+          card.hidden = !content.includes(query);
+        });
+
+        document.querySelectorAll(".help-section").forEach(section => {
+          const sectionCards = [
+            ...section.querySelectorAll(".help-card")
+          ];
+
+          if (sectionCards.length > 0) {
+            section.hidden = sectionCards.every(card => card.hidden);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Restaurants in Khategaon | Khategaon Local Guide</title>
+  <meta name="description" content="Discover popular bakeries, cafes, highway dhabas, and local food spots in Khategaon, Madhya Pradesh.">
+  <meta name="theme-color" content="#155eef">
+  <link rel="canonical" href="https://khategaon.github.io/pages/restaurants.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .food-page {
+      padding-top: 45px;
+      padding-bottom: 75px;
+    }
+
+    .food-hero {
+      padding: 35px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #eef4ff, #f8faff);
+      border: 1px solid #e1eaff;
+      margin-bottom: 30px;
+    }
+
+    .food-hero h1 {
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -1.8px;
+      line-height: 1.15;
+      margin: 10px 0;
+    }
+
+    .food-hero p {
+      max-width: 650px;
+      color: #63718a;
+      margin-bottom: 20px;
+    }
+
+    .food-main-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #155eef;
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .food-main-badge strong {
+      font-size: 22px;
+    }
+
+    .food-search {
+      display: flex;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .food-search input {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #dfe6f1;
+      border-radius: 11px;
+      padding: 13px 15px;
+      outline: none;
+      background: #fff;
+    }
+
+    .food-search input:focus {
+      border-color: #155eef;
+      box-shadow: 0 0 0 3px #155eef18;
+    }
+
+    .food-section {
+      margin-top: 36px;
+      scroll-margin-top: 25px;
+    }
+
+    .food-section-heading {
+      margin-bottom: 18px;
+    }
+
+    .food-section-heading h2 {
+      font-size: 24px;
+      letter-spacing: -.6px;
+      margin: 5px 0;
+    }
+
+    .food-section-heading p {
+      color: #63718a;
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .food-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e6ebf3;
+      border-radius: 16px;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+
+    .food-card:hover {
+      border-color: #c5d7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px #1837690b;
+    }
+
+    .food-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .food-card h3 {
+      font-size: 15px;
+      margin: 0 0 5px;
+    }
+
+    .food-card p {
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.7;
+      margin: 0 0 15px;
+      flex: 1;
+    }
+
+    .food-card ul {
+      margin: 0 0 15px 0;
+      padding-left: 18px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .food-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .food-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #155eef;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .food-meta-label {
+      display: block;
+      color: #8793a6;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+
+    .food-badge-tag {
+      background: #eef4ff;
+      color: #155eef;
+      font-size: 11px;
+      font-weight: 750;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .local-notice {
+      margin-top: 20px;
+      border: 1px solid #dce7ff;
+      background: #f6f9ff;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .local-notice h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .local-notice p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #63718a;
+    }
+
+    .food-disclaimer {
+      margin-top: 28px;
+      color: #63718a;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .food-page {
+        padding-top: 25px;
+      }
+
+      .food-hero {
+        padding: 23px;
+      }
+
+      .food-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .food-card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+  <div id="site-navbar"></div>
+
+  <main class="container food-page">
+
+    <section class="food-hero">
+      <span class="eyebrow">KHATEGAON LOCAL GUIDE</span>
+      <h1>Restaurants in Khategaon</h1>
+      <p>
+        Whether you are looking for a quick highway snack, home-style local cooking, or fresh bakery treats, Khategaon features several popular casual spots favored by travelers and residents alike.
+      </p>
+
+      <div class="food-main-badge">
+        <span aria-hidden="true">🍽️</span>
+        <span>Local Dining <strong>Eateries & Cafes</strong></span>
+      </div>
+    </section>
+
+    <form class="food-search" id="food-search" role="search">
+      <input
+        type="search"
+        id="food-query"
+        placeholder="Search poha, samosa, bakery, dhaba, rooftop, pizza, thali..."
+        aria-label="Search restaurants in Khategaon"
+      >
+    </form>
+
+    <!-- BAKERIES & CAFES -->
+    <section class="food-section" id="bakeries-cafes">
+      <div class="food-section-heading">
+        <span class="eyebrow">QUICK BITES & HANGOTS</span>
+        <h2>Popular Bakeries & Cafes</h2>
+        <p>Fresh bakery items, sweet treats, and multi-cuisine casual dining spots in town.</p>
+      </div>
+
+      <div class="food-grid">
+
+        <article class="food-card" data-search="pinky bakery pizza backsamosa chocolate pastry bakery sweet snack">
+          <div class="food-icon" aria-hidden="true">🧁</div>
+          <span class="food-badge-tag">Bakery & Snacks</span>
+          <h3>Pinky Bakery</h3>
+          <ul>
+            <li>A local favorite known for its fresh food and quick snack items.</li>
+            <li>Reviewers highlight it as a great spot for savory cravings, strongly recommending the <strong>pizza backsamosa</strong>.</li>
+            <li>Widely trusted for its sweet offerings, particularly the <strong>chocolate pastry</strong> selection.</li>
+          </ul>
+          <span class="food-meta">Central Town</span>
+          <span class="food-meta-label">Bakery & Quick Snacks</span>
+        </article>
+
+        <article class="food-card" data-search="café restro shri sundaram movie theater south indian shakes multi cuisine">
+          <div class="food-icon" aria-hidden="true">☕</div>
+          <span class="food-badge-tag">Cafe & Multi-Cuisine</span>
+          <h3>Café & Restro by Shri Sundaram</h3>
+          <ul>
+            <li>Part of an all-in-one entertainment complex featuring a movie theater and marriage garden.</li>
+            <li>Celebrated for its <strong>economical prices</strong> and friendly service.</li>
+            <li>Kitchen is highly rated for <strong>freshly prepared food</strong>, balancing Indian classics with South Indian dishes and shakes.</li>
+          </ul>
+          <span class="food-meta">Sundaram Complex</span>
+          <span class="food-meta-label">Entertainment & Dining Hub</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- HIGHWAY REST STOPS & LOCAL EATERIES -->
+    <section class="food-section" id="local-eateries">
+      <div class="food-section-heading">
+        <span class="eyebrow">LOCAL EATERIES & HIGHWAY DINES</span>
+        <h2>Local Eateries & Highway Rest Stops</h2>
+        <p>Comforting home-style food, highway breakfast spots, and family dhabas.</p>
+      </div>
+
+      <div class="food-grid">
+
+        <article class="food-card" data-search="jaiswal chat house poha samosa kachori khamman highway breakfast">
+          <div class="food-icon" aria-hidden="true">🍲</div>
+          <span class="food-badge-tag">Highway Breakfast Spot</span>
+          <h3>Jaiswal Chat House</h3>
+          <ul>
+            <li>Perched right on the main highway, serving as a designated breakfast rest stop for commuters.</li>
+            <li>Regular travelers frequently stop specifically for their hot <strong>poha and samosas</strong>.</li>
+            <li>Offers delicious quick bites like kachori and khamman.</li>
+          </ul>
+          <span class="food-meta">Main Highway</span>
+          <span class="food-meta-label">Breakfast & Evening Snacks</span>
+        </article>
+
+        <article class="food-card" data-search="hotel shri vrinda rooftop cafe national highway modern stay dining">
+          <div class="food-icon" aria-hidden="true">🏨</div>
+          <span class="food-badge-tag">Rooftop Cafe & Dining</span>
+          <h3>Hotel Shri Vrinda</h3>
+          <ul>
+            <li>Conveniently situated near the National Highway with lodging and restaurant spaces.</li>
+            <li>Diners consistently compliment the <strong>beautiful rooftop cafe layout</strong>.</li>
+            <li>Provides a peaceful atmosphere along with multiple diverse food options served by polite staff.</li>
+          </ul>
+          <span class="food-meta">Near National Highway</span>
+          <span class="food-meta-label">Rooftop Cafe & Dining</span>
+        </article>
+
+        <article class="food-card" data-search="soni bhojnalaya dal paratha jeera rice home style vegetarian">
+          <div class="food-icon" aria-hidden="true">🍱</div>
+          <span class="food-badge-tag">Home-Style Thali</span>
+          <h3>Soni Bhojnalaya</h3>
+          <ul>
+            <li>Delivers high-quality, pocket-friendly meals with simple, comforting flavors.</li>
+            <li>Ranked as a top choice in town for filling, <strong>home-style tasty food</strong>.</li>
+            <li>Highly recommended for simple vegetarian combinations like <strong>dal paratha and jeera rice</strong>.</li>
+          </ul>
+          <span class="food-meta">Main Town</span>
+          <span class="food-meta-label">Pure Vegetarian Diner</span>
+        </article>
+
+        <article class="food-card" data-search="jain bhojnalaya restaurant dhaba indore road vegetarian affordable">
+          <div class="food-icon" aria-hidden="true">🫓</div>
+          <span class="food-badge-tag">Highway Dhaba</span>
+          <h3>Jain Bhojnalaya Restaurant & Dhaba</h3>
+          <ul>
+            <li>Located on Indore Road, catering closely to vegetarian families and student groups.</li>
+            <li>Praised by the community for serving <strong>hygienic vegetarian food</strong> at low prices with fast service.</li>
+            <li>Features a basic, rustic dhaba atmosphere.</li>
+          </ul>
+          <span class="food-meta">Indore Road</span>
+          <span class="food-meta-label">Vegetarian Dhaba</span>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="local-notice">
+      <h3>Dining Tips for Visitors</h3>
+      <p>
+        Most highway snack outlets and chat spots open early in the morning for breakfast (starting around 6:30 AM for hot poha and samosa). Sit-down bhojnalayas and family restaurants typically serve lunch from 12:00 PM to 3:30 PM and dinner from 7:00 PM onwards.
+      </p>
+    </div>
+
+    <p style="margin-top:28px"><a href="../index.html" style="color:#155eef;font-weight:700">← Back to homepage</a></p>
+
+    <div class="food-disclaimer">
+      <strong>Important:</strong> Operating hours, menu items, and pricing may vary. Travelers are advised to verify timings locally during holidays or major festival periods.
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/main.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("food-query");
+      const cards = [...document.querySelectorAll(".food-card")];
+
+      input.addEventListener("input", () => {
+        const query = input.value.trim().toLowerCase();
+
+        cards.forEach(card => {
+          const content = (
+            card.textContent + " " + (card.dataset.search || "")
+          ).toLowerCase();
+
+          card.hidden = !content.includes(query);
+        });
+
+        document.querySelectorAll(".food-section").forEach(section => {
+          const sectionCards = [
+            ...section.querySelectorAll(".food-card")
+          ];
+
+          if (sectionCards.length > 0) {
+            section.hidden = sectionCards.every(card => card.hidden);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
