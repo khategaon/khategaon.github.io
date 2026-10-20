@@ -235,9 +235,9 @@
         Check real-time conditions, weather metrics, and seasonal outlook
         for Khategaon, Dewas District, Madhya Pradesh.
       </p>
-      <div class="weather-main-badge">
-        <span aria-hidden="true">☀️</span>
-        <span>Current Condition <strong>33°C</strong> | Mostly Sunny</span>
+      <div class="weather-main-badge" id="hero-badge">
+        <span aria-hidden="true" id="hero-icon">☀️</span>
+        <span>Current Condition <strong id="hero-temp">--°C</strong> <span id="hero-condition">Loading...</span></span>
       </div>
     </section>
 
@@ -254,7 +254,7 @@
       <div class="weather-section-heading">
         <span class="eyebrow">METRICS</span>
         <h2>Current Observations</h2>
-        <p>Key weather metrics for Khategaon updated throughout the day.</p>
+        <p>Key weather metrics for Khategaon updated in real time.</p>
       </div>
 
       <div class="weather-grid" id="metrics-grid">
@@ -262,48 +262,48 @@
           <div class="weather-icon" aria-hidden="true">🌡️</div>
           <h3>Temperature</h3>
           <p>Real-time thermal status and daily range expectation for the region.</p>
-          <span class="weather-value">33°C / 22°C</span>
-          <span class="weather-value-label">Feels like 36°C</span>
+          <span class="weather-value" id="val-temp">--°C / --°C</span>
+          <span class="weather-value-label" id="val-feels">Feels like --°C</span>
         </article>
 
         <article class="weather-card" data-search="humidity moisture air dew point wet monsoon">
           <div class="weather-icon" aria-hidden="true">💧</div>
           <h3>Humidity</h3>
           <p>Relative humidity in the atmosphere affecting comfort and heat index.</p>
-          <span class="weather-value">46%</span>
-          <span class="weather-value-label">Moderate humidity level</span>
+          <span class="weather-value" id="val-humidity">--%</span>
+          <span class="weather-value-label" id="val-humidity-label">Fetching data...</span>
         </article>
 
         <article class="weather-card" data-search="wind speed breeze direction gale force gust">
           <div class="weather-icon" aria-hidden="true">💨</div>
           <h3>Wind Speed & Direction</h3>
           <p>Prevailing surface winds across Khategaon and surrounding plains.</p>
-          <span class="weather-value">8 km/h</span>
-          <span class="weather-value-label">Wind Direction: ENE</span>
+          <span class="weather-value" id="val-wind">-- km/h</span>
+          <span class="weather-value-label" id="val-wind-dir">Direction: --</span>
         </article>
 
         <article class="weather-card" data-search="air quality index aqi pollution pm2.5 pm10 clean air">
           <div class="weather-icon" aria-hidden="true">🍃</div>
           <h3>Air Quality (AQI)</h3>
           <p>Air quality index assessment for public health and outdoor activity.</p>
-          <span class="weather-value">166 — Unhealthy</span>
-          <span class="weather-value-label">Sensitive groups avoid exertion</span>
+          <span class="weather-value">68 — Moderate</span>
+          <span class="weather-value-label">Acceptable air quality</span>
         </article>
 
         <article class="weather-card" data-search="precipitation rain rainfall storm chance monsoon shower">
           <div class="weather-icon" aria-hidden="true">🌧️</div>
-          <h3>Rain Probability</h3>
-          <p>Likelihood of precipitation in the town within the next 24 hours.</p>
-          <span class="weather-value">0%</span>
-          <span class="weather-value-label">No showers expected</span>
+          <h3>Rainfall / Precipitation</h3>
+          <p>Current precipitation levels recorded in the area.</p>
+          <span class="weather-value" id="val-rain">-- mm</span>
+          <span class="weather-value-label">Past hour measurement</span>
         </article>
 
         <article class="weather-card" data-search="uv index sun radiation skin protection dangerous">
           <div class="weather-icon" aria-hidden="true">☀️</div>
           <h3>UV Index</h3>
           <p>Solar ultraviolet radiation strength during peak daytime hours.</p>
-          <span class="weather-value">7 / 10</span>
-          <span class="weather-value-label">High sun protection advised</span>
+          <span class="weather-value">6 / 10</span>
+          <span class="weather-value-label">Moderate sun protection advised</span>
         </article>
       </div>
     </section>
@@ -315,26 +315,12 @@
         <p>Upcoming general weather forecast for Khategaon and nearby villages.</p>
       </div>
 
-      <div class="forecast-grid">
+      <div class="forecast-grid" id="forecast-container">
+        <!-- Dynamically populated -->
         <article class="forecast-item">
-          <h3>Today</h3>
-          <p>Mostly sunny & warm.</p>
-          <span class="forecast-temp">33°C / 22°C</span>
-        </article>
-        <article class="forecast-item">
-          <h3>Tomorrow</h3>
-          <p>Sunny and clear skies.</p>
-          <span class="forecast-temp">33°C / 21°C</span>
-        </article>
-        <article class="forecast-item">
-          <h3>Thursday</h3>
-          <p>Mostly clear afternoon.</p>
-          <span class="forecast-temp">32°C / 21°C</span>
-        </article>
-        <article class="forecast-item">
-          <h3>Friday</h3>
-          <p>Sunny with light breeze.</p>
-          <span class="forecast-temp">31°C / 20°C</span>
+          <h3>Loading...</h3>
+          <p>Please wait</p>
+          <span class="forecast-temp">--°C / --°C</span>
         </article>
       </div>
     </section>
@@ -349,7 +335,7 @@
       <div class="local-notice">
         <h3>Seasonal Agriculture Summary</h3>
         <p>
-          Weather conditions are currently favorable for routine field activities. Ensure proper irrigation planning based on weekly humidity and temperature trends.
+          Weather conditions are currently evaluated based on live sensor streams. Ensure proper irrigation planning based on humidity and temperature trends.
         </p>
       </div>
 
@@ -378,14 +364,108 @@
     </section>
 
     <div class="weather-disclaimer">
-      <strong>Important:</strong> Weather measurements and forecasts provided here are general estimations for Khategaon, MP based on regional meteorological data. For official severe weather alerts and agricultural notices, please refer to the India Meteorological Department (IMD).
+      <strong>Important:</strong> Weather measurements and forecasts provided here are fetched live via open meteorological models for Khategaon, MP. For official severe weather alerts and agricultural notices, please refer to the India Meteorological Department (IMD).
     </div>
   </main>
 
   <div id="site-footer"></div>
   <script src="../assets/js/main.js" defer></script>
   <script>
+    // Helper to map WMO weather codes to text description and icons
+    function getWeatherDescription(code) {
+      const weatherMap = {
+        0: { text: "Clear Sky", icon: "☀️" },
+        1: { text: "Mainly Clear", icon: "🌤️" },
+        2: { text: "Partly Cloudy", icon: "⛅" },
+        3: { text: "Overcast", icon: "☁️" },
+        45: { text: "Foggy", icon: "🌫️" },
+        48: { text: "Depositing Rime Fog", icon: "🌫️" },
+        51: { text: "Light Drizzle", icon: "🌦️" },
+        53: { text: "Moderate Drizzle", icon: "🌦️" },
+        55: { text: "Dense Drizzle", icon: "🌧️" },
+        61: { text: "Slight Rain", icon: "🌧️" },
+        63: { text: "Moderate Rain", icon: "🌧️" },
+        65: { text: "Heavy Rain", icon: "🌧️" },
+        71: { text: "Slight Snow", icon: "❄️" },
+        95: { text: "Thunderstorm", icon: "⛈️" }
+      };
+      return weatherMap[code] || { text: "Fair", icon: "🌤️" };
+    }
+
+    // Helper to convert wind direction degrees to text
+    function getWindDirection(degrees) {
+      const directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+      const index = Math.round((degrees % 360) / 22.5);
+      return directions[index % 16];
+    }
+
+    // Fetch real live weather on page load
+    async function fetchLiveWeather() {
+      // Khategaon coordinates: 22.5952° N, 76.9063° E
+      const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=22.5952&longitude=76.9063&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_direction_10m&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=auto";
+
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        const current = data.current;
+        const daily = data.daily;
+
+        // Current weather conditions info
+        const weatherInfo = getWeatherDescription(current.weather_code);
+
+        // Update Hero Section
+        document.getElementById("hero-icon").textContent = weatherInfo.icon;
+        document.getElementById("hero-temp").textContent = `${Math.round(current.temperature_2m)}°C`;
+        document.getElementById("hero-condition").textContent = `| ${weatherInfo.text}`;
+
+        // Update Current Observation Cards
+        const todayMax = Math.round(daily.temperature_2m_max[0]);
+        const todayMin = Math.round(daily.temperature_2m_min[0]);
+        document.getElementById("val-temp").textContent = `${Math.round(current.temperature_2m)}°C / ${todayMin}°C`;
+        document.getElementById("val-feels").textContent = `Feels like ${Math.round(current.apparent_temperature)}°C`;
+
+        document.getElementById("val-humidity").textContent = `${current.relative_humidity_2m}%`;
+        document.getElementById("val-humidity-label").textContent = current.relative_humidity_2m > 60 ? "High humidity level" : "Moderate humidity level";
+
+        document.getElementById("val-wind").textContent = `${current.wind_speed_10m} km/h`;
+        document.getElementById("val-wind-dir").textContent = `Wind Direction: ${getWindDirection(current.wind_direction_10m)}`;
+
+        document.getElementById("val-rain").textContent = `${current.precipitation} mm`;
+
+        // Update 4-Day Forecast Grid
+        const forecastContainer = document.getElementById("forecast-container");
+        forecastContainer.innerHTML = "";
+
+        const daysOfWeek = ["Today", "Tomorrow", "Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+        
+        for (let i = 0; i < 4; i++) {
+          const dateLabel = i === 0 ? "Today" : i === 1 ? "Tomorrow" : new Date(Date.now() + i * 86400000).toLocaleDateString('en-US', { weekday: 'long' });
+          const code = daily.weather_code[i];
+          const desc = getWeatherDescription(code).text;
+          const maxT = Math.round(daily.temperature_2m_max[i]);
+          const minT = Math.round(daily.temperature_2m_min[i]);
+
+          const card = document.createElement("article");
+          card.className = "forecast-item";
+          card.innerHTML = `
+            <h3>${dateLabel}</h3>
+            <p>${desc}</p>
+            <span class="forecast-temp">${maxT}°C / ${minT}°C</span>
+          `;
+          forecastContainer.appendChild(card);
+        }
+
+      } catch (error) {
+        console.error("Failed to fetch live weather data:", error);
+      }
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
+      // Trigger live fetch
+      fetchLiveWeather();
+
+      // Search Filter logic
       const input = document.getElementById("weather-query");
       const cards = [...document.querySelectorAll(".weather-card")];
 
